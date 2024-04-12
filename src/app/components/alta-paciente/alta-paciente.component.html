@@ -1,0 +1,23 @@
+<div *ngIf="altaSuccess">
+    <p>{{altaMessage}}</p>
+</div>
+<div *ngIf="!altaSuccess">
+    <form>
+        <label for="correo">Correo:</label>
+        <input type="text" id="correo" [(ngModel)]="correo" name="correo" required>
+        <br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" required>
+        <br>
+        <label for="nombres">Nombre(s):</label>
+        <input type="text" id="nombres" [(ngModel)]="nombres" name="nombres" required>
+        <br>
+        <label for="paterno">Apellido paterno:</label>
+        <input type="text" id="paterno" [(ngModel)]="paterno" name="paterno" required>
+        <br>
+        <label for="materno">Apellido materno:</label>
+        <input type="text" id="materno" [(ngModel)]="materno" name="materno" required>
+        <br>
+        <button type="button" (click)="register()">Register</button>
+    </form>
+</div>
