@@ -92,5 +92,9 @@
 }
 
 nav {
-  background-color: rgb(255, 255, 255,.5);
+  background-color: rgb(255, 255, 255,.75);
+}
+
+.txtColor{
+  color:#002f57;
 }
