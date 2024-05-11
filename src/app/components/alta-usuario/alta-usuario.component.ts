@@ -1,20 +1,22 @@
 import { Component, OnInit, NgModule} from '@angular/core';
 //importa el servicio para la solicitud http
-import { altaPacienteService } from '../../services/alta-paciente.service';
+import { conexionAzFuncService } from '../../services/conexionAzFunc.service';
 //importa la interfaz para manejar el objt paciente
 import { Usuario } from '../../models/usuario.interface';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
-  selector: 'app-alta-paciente',
+  selector: 'app-alta-usuario',
   standalone: true,
-  imports: [FormsModule,CommonModule],
-  templateUrl: './alta-paciente.component.html',
-  styleUrl: './alta-paciente.component.css',
-  providers: [altaPacienteService]
+  imports: [FormsModule,CommonModule,
+            HeaderComponent],
+  templateUrl: './alta-usuario.component.html',
+  styleUrl: './alta-usuario.component.css',
+  providers: [conexionAzFuncService]
 })
-export class AltaPacienteComponent implements OnInit{
+export class AltaUsuarioComponent implements OnInit{
   correo: string='';
   contrasena: string='';
   nombres: string='';
@@ -24,9 +26,10 @@ export class AltaPacienteComponent implements OnInit{
   altaSuccess: boolean =false;
   altaError: boolean =true;
   submitted: boolean= false;
-  
   altaMessage: string='';
-  constructor (private altaPacienteService: altaPacienteService){ }
+
+  //instancia servicio
+  constructor (private conexionAzFuncService: conexionAzFuncService){ }
 
   ngOnInit(): void {  }
   
@@ -46,10 +49,11 @@ export class AltaPacienteComponent implements OnInit{
       tipo: this.tipo
     };
     const requestBody = { paciente: paciente };
-    this.altaPacienteService.altaPaciente(requestBody)
+    this.conexionAzFuncService.altaPaciente(requestBody)
       .subscribe({
         next: (response) => {
           this.altaSuccess = true;
+          this.altaError=true;
           this.altaMessage = response as string;
           this.correo = '';
           this.contrasena = '';
@@ -61,8 +65,9 @@ export class AltaPacienteComponent implements OnInit{
         },
         error: (error) => {
           this.altaError=false;
+          this.altaSuccess=false;
           console.error('Error al registrar paciente: ', error);
-          this.altaMessage = 'Ocurrión un error mientras se registraba el paciente, intente de nuevo.';
+          this.altaMessage = 'Ocurrión un error mientras se registraba el usuario, intente de nuevo.';
         }
       });
   }

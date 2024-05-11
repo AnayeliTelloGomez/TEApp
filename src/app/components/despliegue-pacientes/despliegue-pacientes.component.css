@@ -1,0 +1,22 @@
+.container {
+    max-width: 800px;
+    padding: 1rem;
+}
+
+.align-icon{
+    display: flex;
+    justify-content: right;
+}
+
+.image-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  /* Estilos opcionales para el tamaño del SVG */
+  .image-button svg {
+    width: 24px; /* Ancho deseado */
+    height: 24px; /* Altura deseada */
+  }

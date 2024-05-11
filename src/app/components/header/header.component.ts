@@ -14,8 +14,4 @@ export class HeaderComponent {
   setTheme(theme: string) {
     document.documentElement.setAttribute('data-bs-theme', theme);
   }
-
-  onInicio(){
-
-  }
 }
