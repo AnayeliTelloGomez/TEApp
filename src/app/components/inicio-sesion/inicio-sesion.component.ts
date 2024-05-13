@@ -33,7 +33,7 @@ export class InicioSesionComponent implements OnInit{
   //caracteristicas del usuario a iniciar sesion
   correo: string='';
   contrasena: string='';
-  tipo: string='';
+  tipo: string='2';
   //controlar el mennsaje de credenciales incorrectas
   inicioDenied: boolean=true;
   //el mensaje a mostrar en el alert
@@ -49,11 +49,13 @@ export class InicioSesionComponent implements OnInit{
     if(this.tipoUsuarioBtn){
       this.tipoUsuario='Especialista';
       this.tipo='1';
-      console.log(this.tipoUsuario)
+      sessionStorage.setItem('tipo', '1');
+      console.log(this.tipoUsuario+this.tipo)
     }else{
       this.tipoUsuario='Paciente';
-      console.log(this.tipoUsuario)
       this.tipo='2';
+      sessionStorage.setItem('tipo', '2');
+      console.log(this.tipoUsuario+this.tipo);
     }
   }
 
@@ -73,12 +75,22 @@ export class InicioSesionComponent implements OnInit{
         this.message=response.message;
         console.log(response.message);
         sessionStorage.setItem('correo', this.correo);
-        sessionStorage.setItem('inicio', 'true');
-        this.router.navigate(['/inicioPaciente'])
+        if(sessionStorage.getItem('tipo')==='2'){
+          console.log(this.tipo+'paciente')
+          sessionStorage.setItem('inicio', 'true');
+          this.router.navigate(['/inicioPaciente'])
+        }else{
+          console.log(this.tipo +'esp')
+          sessionStorage.setItem('inicioEsp', 'true');
+          this.router.navigate(['/inicioEspecialista'])
+        }  
       },
       error: (error)=>{
         this.inicioDenied=false;
-        sessionStorage.setItem('inicio', 'false');
+        if(this.tipo==='2')
+          sessionStorage.setItem('inicio', 'false');
+        else
+          sessionStorage.setItem('inicioEsp', 'false');
         console.error('Credenciales erroneas: ',error.error.message);
         this.message='Correo o contraseña incorrectos.'
       }
@@ -89,6 +101,15 @@ export class InicioSesionComponent implements OnInit{
   //avisarle al guard que se inicio sesion correctamente
   getAuthToken(): Observable<boolean>{
     if(sessionStorage.getItem('inicio')==='true')
+      return of(true);
+    else{
+      return of(false);
+    }
+  }
+
+  //avisarle al guard que se inicio sesion correctamente
+  getAuthTokenEsp(): Observable<boolean>{
+    if(sessionStorage.getItem('inicioEsp')==='true')
       return of(true);
     else{
       return of(false);

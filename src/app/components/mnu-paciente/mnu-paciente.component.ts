@@ -14,13 +14,10 @@ import { InicioSesionComponent } from '../inicio-sesion/inicio-sesion.component'
   providers: [InicioSesionComponent, ]
 })
 export class MnuPacienteComponent {
-  constructor (private InicioSesionComponent: InicioSesionComponent, private router: Router) {  }
-  closeSesion: boolean=false;
+  constructor (private router: Router) {  }
+  
   cierreSesion(){
-    if(!this.closeSesion){
-      sessionStorage.setItem('inicio', 'false');
-      this.router.navigate(['']);
-    }
-      
+    sessionStorage.setItem('inicio', 'false');
+    this.router.navigate(['']);
   }
 }
