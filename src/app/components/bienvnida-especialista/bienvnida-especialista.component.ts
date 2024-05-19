@@ -10,5 +10,5 @@ import { MenuEspecialistaComponent } from '../menu-especialista/menu-especialist
   styleUrl: './bienvnida-especialista.component.css'
 })
 export class BienvnidaEspecialistaComponent {
-
+  correo=localStorage.getItem('correo');
 }

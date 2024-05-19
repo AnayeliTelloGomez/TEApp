@@ -49,12 +49,12 @@ export class InicioSesionComponent implements OnInit{
     if(this.tipoUsuarioBtn){
       this.tipoUsuario='Especialista';
       this.tipo='1';
-      sessionStorage.setItem('tipo', '1');
+      localStorage.setItem('tipo', '1');
       console.log(this.tipoUsuario+this.tipo)
     }else{
       this.tipoUsuario='Paciente';
       this.tipo='2';
-      sessionStorage.setItem('tipo', '2');
+      localStorage.setItem('tipo', '2');
       console.log(this.tipoUsuario+this.tipo);
     }
   }
@@ -74,23 +74,23 @@ export class InicioSesionComponent implements OnInit{
       next: (response)=>{
         this.message=response.message;
         console.log(response.message);
-        sessionStorage.setItem('correo', this.correo);
-        if(sessionStorage.getItem('tipo')==='2'){
+        localStorage.setItem('correo', this.correo);
+        if(localStorage.getItem('tipo')==='2'){
           console.log(this.tipo+'paciente')
-          sessionStorage.setItem('inicio', 'true');
+          localStorage.setItem('inicio', 'true');
           this.router.navigate(['/inicioPaciente'])
         }else{
           console.log(this.tipo +'esp')
-          sessionStorage.setItem('inicioEsp', 'true');
+          localStorage.setItem('inicioEsp', 'true');
           this.router.navigate(['/inicioEspecialista'])
         }  
       },
       error: (error)=>{
         this.inicioDenied=false;
         if(this.tipo==='2')
-          sessionStorage.setItem('inicio', 'false');
+          localStorage.setItem('inicio', 'false');
         else
-          sessionStorage.setItem('inicioEsp', 'false');
+          localStorage.setItem('inicioEsp', 'false');
         console.error('Credenciales erroneas: ',error.error.message);
         this.message='Correo o contraseña incorrectos.'
       }
@@ -100,7 +100,7 @@ export class InicioSesionComponent implements OnInit{
 
   //avisarle al guard que se inicio sesion correctamente
   getAuthToken(): Observable<boolean>{
-    if(sessionStorage.getItem('inicio')==='true')
+    if(localStorage.getItem('inicio')==='true')
       return of(true);
     else{
       return of(false);
@@ -109,7 +109,8 @@ export class InicioSesionComponent implements OnInit{
 
   //avisarle al guard que se inicio sesion correctamente
   getAuthTokenEsp(): Observable<boolean>{
-    if(sessionStorage.getItem('inicioEsp')==='true')
+    console.log(localStorage.getItem)
+    if(localStorage.getItem('inicioEsp')==='true')
       return of(true);
     else{
       return of(false);

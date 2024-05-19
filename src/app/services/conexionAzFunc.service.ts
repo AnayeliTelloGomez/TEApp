@@ -22,27 +22,34 @@ export class conexionAzFuncService{
   }
 
   desplieguePacientes(){
-    return this.http.get<any>(`${this.apiURL}/desplieguePaciente`)
+    return this.http.get<any>(`${this.apiURL}/desplieguePaciente`);
   }
 
   eliminarPacientee(correo: string){
-    return this.http.get<any>(`${this.apiURL}/eliminarPaciente?correo=${correo}`)
+    return this.http.get<any>(`${this.apiURL}/eliminarPaciente?correo=${correo}`);
   }
 
   validarPaciente(correo: string, idEsp: string){
-    return this.http.get<any>(`${this.apiURL}/validarPaciente?correo=${correo}&idEsp=${idEsp}`)
+    return this.http.get<any>(`${this.apiURL}/validarPaciente?correo=${correo}&idEsp=${idEsp}`);
   }
 
   despliegueEspecialistas(){
-    return this.http.get<any>(`${this.apiURL}/despliegueEspecialista`)
+    return this.http.get<any>(`${this.apiURL}/despliegueEspecialista`);
   }
 
   eliminarEspecialista(correo: string){
-    return this.http.get<any>(`${this.apiURL}/eliminarEspecialista?correo=${correo}`)
+    return this.http.get<any>(`${this.apiURL}/eliminarEspecialista?correo=${correo}`);
   }
 
   validarEspecialista(correo: string, idEsp: string){
-    return this.http.get<any>(`${this.apiURL}/validarEspecialista?correo=${correo}&idAdmin=${idEsp}`)
+    return this.http.get<any>(`${this.apiURL}/validarEspecialista?correo=${correo}&idAdmin=${idEsp}`);
+  }
+  enviarCodigoValidacion(correo: string){
+    return this.http.get<any>(`${this.apiURL}/codigoValidar?correo=${correo}`);
   }
 
+  reestablecerContrasena(correo: string,codigo:string,contrasena:string){
+    console.log(correo+codigo+contrasena)
+    return this.http.get<any>(`${this.apiURL}/validarCodigo?correo=${correo}&codigo=${codigo}&contrasena=${contrasena}`);
+  }
 }

@@ -1,0 +1,50 @@
+<app-header></app-header>
+    <div>
+        <div *ngIf="envioSuccess" class="alert alert-info" role="alert">
+            {{message}}
+        </div>
+        <div *ngIf="!error" class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+        <div *ngIf="conSuccess" class="alert alert-success" role="alert">
+            {{message}}
+        </div>
+    </div>
+    <body class="form-signin w-100 m-auto bg-body-tertiary">
+        <div class="align-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+            </svg>
+        </div>
+        <h1 class="h3 mb-3 text-center fw-bold">Recuperar contraseña</h1>
+        <form *ngIf="!envioSuccess" (ngSubmit)="enviarCodigo()">
+
+            <div class="py-2 form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="usuario@correo.com" required [(ngModel)]="correo" name="correo">
+                <label for="floatingInput">Correo electrónico</label>
+                <div class="invalid-feedback">
+                    El correo electrónico es un dato obligatorio.
+                </div>
+            </div>
+
+            <!--<div class="form-check form-switch py-4">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="tipoUsuarioBtn" name="tipoUsuarioBtn" (change)="tipoUser()" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">{{tipoUsuario}}</label>
+            </div>-->
+
+            <button class="btn btn-primary w-100 py-2" type="submit">Enviar correo de verificación</button>
+        </form>
+
+        <form *ngIf="envioSuccess" (ngSubmit)="validarCodigo()">
+            <div class="py-2 form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="" required [(ngModel)]="codigo" name="codigo">
+                <label for="floatingInput">Código de verificación</label>
+            </div>
+            <div class="py-2 form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="" required [(ngModel)]="contrasena" name="contrasena">
+                <label for="floatingInput">Nueva contreseña</label>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">Verificar código</button>
+        </form>
+    </body>
+

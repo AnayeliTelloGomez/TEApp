@@ -17,7 +17,7 @@ export class MnuPacienteComponent {
   constructor (private router: Router) {  }
   
   cierreSesion(){
-    sessionStorage.setItem('inicio', 'false');
+    localStorage.setItem('inicio', 'false');
     this.router.navigate(['']);
   }
 }

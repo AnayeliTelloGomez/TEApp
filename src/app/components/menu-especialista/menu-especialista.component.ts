@@ -14,7 +14,7 @@ export class MenuEspecialistaComponent {
   constructor (private router: Router){}
 
   cierreSesion(){
-    sessionStorage.setItem('inicio', 'false');
+    localStorage.setItem('inicioEsp', 'false');
     this.router.navigate(['']);
   }
 
