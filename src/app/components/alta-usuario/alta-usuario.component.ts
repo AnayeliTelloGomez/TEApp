@@ -10,8 +10,7 @@ import { HeaderComponent } from '../header/header.component';
 @Component({
   selector: 'app-alta-usuario',
   standalone: true,
-  imports: [FormsModule,CommonModule,
-            HeaderComponent],
+  imports: [FormsModule,CommonModule,HeaderComponent],
   templateUrl: './alta-usuario.component.html',
   styleUrl: './alta-usuario.component.css',
   providers: [conexionAzFuncService]

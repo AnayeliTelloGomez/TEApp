@@ -52,4 +52,11 @@ export class conexionAzFuncService{
     console.log(correo+codigo+contrasena)
     return this.http.get<any>(`${this.apiURL}/validarCodigo?correo=${correo}&codigo=${codigo}&contrasena=${contrasena}`);
   }
+  datosUsuario(correo: string, tipo: string){
+    return this.http.get<any>(`${this.apiURL}/informacionUsuario?correo=${correo}&tipo=${tipo}`);
+  }
+  guardarInfoUsuario(requestBody: any) :Observable<string>{
+    console.log(requestBody)
+    return this.http.post(`${this.apiURL}/guardarInfoUsuario`,requestBody, { responseType: 'text' })
+  }
 }
