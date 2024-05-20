@@ -115,40 +115,17 @@
   fill: currentColor;
 }
 
-/*flipcard*/
-.maincontainer{
-  position: relative;
-  width: 100%;
-  height: 100%;
+.containermv {
+  display: inline-block; /* Permite que el contenedor se ajuste al tamaño del texto */
+  background-color: var(--bs-info-subtle, #e0f7fa); /* Color de fondo con fallback */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15); /* Sombra suave */
+  border-radius: 21px 21px 0 0; /* Bordes redondeados */
+  padding: 20px; /* Espacio alrededor del texto */
+  margin: 0 auto; /* Centrarse horizontalmente */
 }
-
-.thecard{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: all 0.5s ease;
+.texto {
+  font-weight: 400; /* Normal */
+  font-size: 1.25rem; /* Tamaño de fuente (h4) */
+  color: #6c757d; /* Texto mutado */
+  margin-bottom: 1rem; /* Margen inferior */
 }
-
-.thecard:hover{
-  transform: rotateY(180deg);
-}
-
-.thefront{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: rgb(0,47,87,0.5);
-    color: #002f57;
-}
-
-.theback{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background: blueviolet;
-    color: aqua;
-    transform: rotateY(180deg);
-} 
