@@ -1,0 +1,229 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  :host {
+    display: block;
+    /*background-color: rgba(239, 244, 245, 0.812);*/
+    height: 100%;  
+    overflow-y: auto;
+    background-image: url('../../../../assets/img/background.jpg');
+    background-size: cover; /* para cubrir todo el área del fondo */
+    background-position: center; /* para centrar la imagen */
+  }
+  
+  
+  
+  .imagen-reducida {
+    max-width: 50px; /* Ancho máximo deseado */
+    height: auto;
+    margin: 0 auto; 
+    display: block; /* Altura automática para mantener la proporción */
+  }
+  
+  
+  .space {
+    margin-bottom: 20px; /* Espacio vertical entre elementos */
+  }
+  
+  .space2 {
+    margin-bottom: 10px; /* Espacio vertical entre elementos */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección principal a columna */
+    align-items: center;
+    justify-content: center; /* Centramos los elementos */
+  }
+  
+    
+    .column {
+      width: 50%; /* Cada columna ocupa la mitad del contenedor */
+      box-sizing: border-box; /* Incluye padding y border en el ancho */
+      padding: 0 10px; /* Espaciado entre columnas */
+    }
+    
+    .example-container {
+      width: 300px;
+      max-width: 100%; /* Ancho máximo para cada contenedor */
+      margin-bottom: 5px; /* Espaciado entre contenedores */
+      border-radius: 10px; /* Ajusta el valor según el grado de curvatura deseado */
+      overflow: hidden;
+      height: 600px;
+      margin-left: 20px;
+    }
+    
+    .example-list {
+      min-height: 60px;
+      background: rgba(249, 248, 248, 0.85);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+  
+    .example-list2 {
+      min-height: 60px;
+      background: rgba(249, 248, 248, 0);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .example-box {
+      padding: 20px 10px;
+      border-right: solid 1px #cccccc; /* Mantiene el borde derecho */
+      color: rgba(0, 0, 0, 0.87);
+      box-sizing: border-box;
+      cursor: move;
+      background: rgba(198, 195, 195, 0);
+      font-size: 14px;
+      margin-right: 0px; /* Agrega un margen derecho a cada caja */
+      border-radius: 10px; /* Ajusta el valor según el grado de curvatura deseado */
+      overflow: hidden;
+    }
+    
+    .example-box:last-child {
+      border-right: none;
+      margin-right: 0; /* Elimina el margen derecho del último elemento para evitar espacio extra */
+    }
+    
+    .cdk-drag-preview {
+      box-sizing: border-box;
+      border-radius: 4px;
+      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+    
+    .cdk-drag-placeholder {
+      opacity: 0;
+    }
+    
+    .cdk-drag-animating {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+    
+    .example-box:last-child {
+      border: none;
+    }
+    
+    .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+    
+    /* Media query para diseño responsivo */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column; /* Cambiar la dirección del flex a columna */
+      }
+    }
+  
+    .scrollable-list {
+      max-height: 600px; /* Altura máxima de la lista antes de que aparezca el scroll */
+      overflow-y: auto; /* Agrega un scroll vertical si el contenido excede la altura máxima */
+    }
+    
+    .scrollable-list2 {
+      max-height: 500px; /* Altura máxima de la lista antes de que aparezca el scroll */
+      overflow-y: auto; /* Agrega un scroll vertical si el contenido excede la altura máxima */
+    }
+  
+    .center {
+      width: 800px; /* Ancho automático para ocupar todo el ancho disponible */
+      height: 40px; /* Ajusta la altura según sea necesario */
+      background-color: #57c95b; /* Color verde */
+      border: none; /* Quita el borde */
+      border-radius: 20px; /* Hace que el botón sea ovalado */
+      color: white; /* Color del texto */
+      text-align: center; /* Centra el texto horizontalmente */
+      text-decoration: none; /* Quita la subrayado del texto */
+      display: flex; /* Usa flexbox para centrar horizontalmente */
+      align-items: center; /* Centra verticalmente el contenido */
+      justify-content: center; /* Centra horizontalmente el contenido */
+      font-size: 16px; /* Tamaño de la fuente */
+      cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+      outline: none; /* Quita el contorno al hacer clic en el botón */
+      padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+      font-family: Helvetica, sans-serif; /* Tipo de letra */
+      font-weight: bold;
+      box-shadow: 
+      0px 2px 0px 4px #2faf35; 
+      transition: transform 0.3s ease 0s;
+    }
+    
+    
+    .center:hover {
+      transform: translateY(-10px);
+      background-color: #45a049; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+    }
+    
+    .center:active {
+      background-color: #367939; /* Cambia el color de fondo cuando se hace clic en el botón */
+    }
+  
+  
+  
+    .square-wrapper {
+      width: 800px;
+      max-width: 100%; /* Ajustado para acomodar dos listas lado a lado */
+      height: 100%; /* Ajustado para ser auto para ajustar el contenido */
+      max-height: 600px;
+      background-color: #ffffff;
+      margin: 20px auto;
+      padding: 10px;
+      box-sizing: border-box;
+      box-shadow: 
+      0px 3px 0 5px rgb(177, 176, 176); /* Sombra en la parte inferior *//* Sombra en la parte derecha */
+      border-radius: 10px; /* Ajusta el valor según el grado de curvatura deseado */
+      overflow: hidden;
+      display: flex; /* Usamos flexbox para alinear las listas */
+      justify-content: center;
+    }
+    
+    .vertical {
+      display: flex;
+      justify-content: space-around; /* Centra y distribuye el espacio entre los hijos */
+    }
+    
+    .vertical-container {
+      width: 100%;
+      margin: 0 50px;  /* Cada contenedor ocupa la mitad del ancho del contenedor padre */
+    }
+    
+    
+    .example-box img {
+      max-width: 200px; /* Controla el ancho de la imagen */
+      height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+      display: block;
+      margin: 0 auto;
+    }
+    
+
+
+    .modal-green{
+      background-color:#2faf35;
+      color: white;
+      border: none;
+    }
+
+    .modal-green:active {
+      background-color: #367939; /* Cambia el color de fondo cuando se hace clic en el botón */
+    }
+
+    .right{
+      position: absolute;
+      right: 0;
+    }
+
+    .titulo{
+      justify-content: center;
+      text-align: center;
+      font-size: 4em;
+      font-weight: bold;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      color: rgb(0, 0, 0);
+      line-height: 1.0;
+    }
