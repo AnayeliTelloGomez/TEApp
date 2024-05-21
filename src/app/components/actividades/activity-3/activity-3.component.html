@@ -1,1 +1,62 @@
-<p>activity-3 works!</p>
+
+
+<button mat-icon-button color="black" aria-label="clear" data-bs-toggle="modal" data-bs-target="#Backdrop" class="left">
+    <mat-icon>clear</mat-icon>
+  </button>
+
+  <button mat-icon-button color="black" aria-label="help" class="right" data-bs-toggle="modal" data-bs-target="#Helpdrop">
+    <mat-icon >help</mat-icon>
+  </button>
+
+<h1 class = 'titulo'>¿Quién está sintiendo {{emotion}}?</h1>
+
+<div>
+  <mat-grid-list cols="2" rowHeight="600px">
+    <mat-grid-tile colspan="1">
+      <button mat-raised-button class="image-button" (click)="onButtonClick(currentImages[0])">
+        <img [src]="getImagePath(currentImages[0])" alt="Imagen Correcta">
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+      <button mat-raised-button class="image-button" (click)="onButtonClick(currentImages[1])">
+        <img [src]="getImagePath(currentImages[1])" alt="Imagen Incorrecta">
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <h3>{{ currentRepetition }} de {{ repetitions }}</h3>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="Backdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        Si cierras esta actividad perderas todo tu progreso
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+        <button type="button" class="btn btn-primary modal-green"  data-bs-dismiss="modal" routerLink = "/prueba">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Help -->
+<div class="modal fade" id="Helpdrop"  data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        En esta actividad deberás elegir cual de los dos botones representa la emoción correcta.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>

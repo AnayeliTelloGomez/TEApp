@@ -18,28 +18,37 @@ html, body {
   
   
   .photo-container {
-      display: block;
+      display: flex;
       justify-content: center;
       align-items: center;
       height: auto;
-      width: auto;
-      max-height: 400px; /* Asume que el contenedor toma toda la altura de la ventana */
+      width: 400px;
+      max-height: 600px; /* Asume que el contenedor toma toda la altura de la ventana */
       max-width: 600px;
       background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
-      padding: 20px;
+      padding: 10px;
       box-shadow: 
       0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
       border-radius: 10px; /* Bordes redondeados */
       margin: 10px; /* Espacio alrededor del contenedor */
       box-sizing: border-box;
+      position:relative;
+      overflow: hidden;
     }
     
-    .carousel-photos{
+    .carousel-item img{
       height: auto;
       width: auto;
-        max-height: 300px;
-        max-width: 100%;
+      max-height: 100%;
+      max-width: 100%;
     }
+
+    .carousel{
+        height: auto;
+        width: auto;
+        max-height: 100%;
+        max-width: 70%;
+      }
   
   
     .reduce-top-margin {
