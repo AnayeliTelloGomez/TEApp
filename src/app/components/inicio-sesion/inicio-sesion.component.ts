@@ -12,6 +12,7 @@ import {conexionAzFuncService} from '../../services/conexionAzFunc.service';
 import {usuarioInicio} from '../../models/usuarioIncio.interface';
 //para retornar el valor al guard
 import { Observable,of } from 'rxjs';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ import { Observable,of } from 'rxjs';
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
-  imports: [FormsModule,CommonModule,HeaderComponent],
+  imports: [FormsModule,CommonModule,HeaderComponent,RouterLink,RouterLinkActive,RouterOutlet],
   templateUrl: './inicio-sesion.component.html',
   styleUrl: './inicio-sesion.component.css',
   providers: [conexionAzFuncService]
