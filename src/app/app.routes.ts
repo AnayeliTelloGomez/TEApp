@@ -18,8 +18,11 @@ import { Activity1Component } from './components/actividades/activity-1/activity
 import { Activity2Component } from './components/actividades/activity-2/activity-2.component';
 import { Activity3Component } from './components/actividades/activity-3/activity-3.component';
 import { Activity4Component } from './components/actividades/activity-4/activity-4.component';
+import { Activity5Component } from './components/actividades/activity-5/activity-5.component';
 import { ResultsAct3Component } from './components/actividades/results-act3/results-act3.component';
 import { ResultsAct4Component } from './components/actividades/results-act4/results-act4.component';
+import { ResultsAct5Component } from './components/actividades/results-act5/results-act5.component';
+import { NombreCapturaComponent } from './components/actividades/nombre-captura/nombre-captura.component';
 
 
 
@@ -39,8 +42,11 @@ export const routes: Routes = [
     {path: 'activity2/:emotion',component: Activity2Component},
     {path: 'activity3/:emotion/:repetitions', component: Activity3Component},
     {path: 'activity4/:emotion/:count', component: Activity4Component},
+    {path: 'activity5/:emotion', component: Activity5Component},
     {path: 'resultados_act3', component: ResultsAct3Component},
     {path: 'resultados_act4', component: ResultsAct4Component},
+    {path: 'resultados_act5', component: ResultsAct5Component},
+    { path: 'nombrecaptura/:emotion', component: NombreCapturaComponent},
 
 
     {path: '**', component: InicioSesionComponent},

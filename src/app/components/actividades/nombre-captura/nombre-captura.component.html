@@ -1,0 +1,9 @@
+<mat-grid-list cols="1" rowHeight="600px">
+    <mat-grid-tile colspan="1">
+    <div *ngIf="!nombreCapturado">
+      <label for="nombre" class="titulo">Introduce tu nombre:</label>
+      <input id="nombre" [(ngModel)]="nombre" placeholder="Tu nombre" class = container>
+      <button (click)="capturarNombre()" class="center">Comenzar</button>
+    </div>
+    </mat-grid-tile>
+    </mat-grid-list>

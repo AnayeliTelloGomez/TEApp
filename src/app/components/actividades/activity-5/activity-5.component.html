@@ -1,0 +1,30 @@
+<mat-grid-list cols="1" rowHeight="600px">
+    <mat-grid-tile colspan="1">
+    <div *ngIf="mostrarHistoria" class="contenedor">
+      <div class="container">
+        <p [innerHTML]="historia"></p>
+      </div>
+      <br>
+      <div *ngIf="mostrarOpciones">
+        <button *ngFor="let opcion of opciones[emocion][pasoActual]" (click)="elegirOpcion(opcion.correcta)" class="center">{{ opcion.texto }}</button>
+      </div>
+      <div *ngIf="mostrarError" class="contenedor">
+        <div class="container2">
+         <p>Esa no es la mejor opción.</p>
+        </div>
+        <button (click)="regresar()" class="center">Regresar</button>
+      </div>
+    </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" class="reduce-top-margin">
+    <div *ngIf="mostrarFin" class="contenedor">
+      <div class="container">
+        <p>Fin de la historia.</p>
+      </div>
+     
+      <button (click)="terminarHistoria()" class="center">Terminar Historia</button>
+    </div>
+    </mat-grid-tile>
+    
+    
+    </mat-grid-list>
