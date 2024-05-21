@@ -61,6 +61,49 @@ export class Activity4Component {
     'Logras aprender algo nuevo',
     // Añade más oraciones aquí según sea necesario
   ];
+
+  sentencesAsco: string[] = [
+    'Encuentras un insecto en tu comida',
+    'Tienes que limpiar algo muy sucio',
+    'Alguien estornuda sin cubrirse cerca de ti',
+    'Ves basura acumulada en la calle',
+    'Hueles algo podrido en la nevera',
+    'Te salpica agua sucia de un charco',
+    'Ves a alguien no lavarse las manos después de usar el baño',
+    'Comes algo con un sabor horrible',
+    'Encuentras un pelo en tu comida',
+    'Te ensucias con barro inesperadamente',
+    // Añade más oraciones aquí según sea necesario
+  ];
+  
+  sentencesMiedo: string[] = [
+    'Escuchas ruidos extraños en la noche',
+    'Te pierdes en un lugar desconocido',
+    'Alguien te sigue en la calle',
+    'Ves una película de terror solo',
+    'Recibes una llamada telefónica aterradora',
+    'Te encuentras en medio de una tormenta fuerte',
+    'Tu mascota desaparece de repente',
+    'Sientes que te observan cuando estás solo',
+    'Tienes que dar un discurso en público',
+    'Te encuentras con un animal peligroso',
+    // Añade más oraciones aquí según sea necesario
+  ];
+  
+  sentencesTristeza: string[] = [
+    'Te despides de un amigo que se muda lejos',
+    'Pierdes un objeto muy querido',
+    'No te invitan a una fiesta a la que querías ir',
+    'Tus padres discuten frente a ti',
+    'Te sientes solo en el recreo',
+    'Un ser querido se enferma',
+    'No puedes ir a un evento importante',
+    'Tu mascota fallece',
+    'Alguien dice algo hiriente sobre ti',
+    'Fracasar en un examen importante',
+    // Añade más oraciones aquí según sea necesario
+  ];
+  
   selectedSentence: string = '';
 
   constructor(private route: ActivatedRoute, private router: Router) {}
@@ -92,12 +135,18 @@ export class Activity4Component {
     if(this.emotion == "Enojo"){
       const randomIndex = Math.floor(Math.random() * this.sentencesEnojo.length);
       this.selectedSentence = this.sentencesEnojo[randomIndex];
-    } else if(this.emotion == "Felicidad"){
+    } else if(this.emotion =="Alegria"){
       const randomIndex = Math.floor(Math.random() * this.sentencesFelicidad.length);
       this.selectedSentence = this.sentencesFelicidad[randomIndex];
+    }else if(this.emotion =="Asco"){
+      const randomIndex = Math.floor(Math.random() * this.sentencesAsco.length);
+      this.selectedSentence = this.sentencesAsco[randomIndex];
+    }else if(this.emotion =="Miedo"){
+      const randomIndex = Math.floor(Math.random() * this.sentencesMiedo.length);
+      this.selectedSentence = this.sentencesMiedo[randomIndex];
     }else{
-      const randomIndex = Math.floor(Math.random() * this.sentencesFelicidad.length);
-      this.selectedSentence = this.sentencesFelicidad[randomIndex];
+      const randomIndex = Math.floor(Math.random() * this.sentencesTristeza.length);
+      this.selectedSentence = this.sentencesTristeza[randomIndex];
     }
   }
 
