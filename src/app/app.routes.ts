@@ -8,6 +8,11 @@ import { DespliegueEspecialistasComponent } from './components/despliegue-especi
 import { BienvenidaPacienteComponent } from './components/bienvenida-paciente/bienvenida-paciente.component';
 import { BienvnidaEspecialistaComponent } from './components/bienvnida-especialista/bienvnida-especialista.component';
 import { SolicitudRecuperacionContrasenaComponent } from './components/solicitud-recuperacion-contrasena/solicitud-recuperacion-contrasena.component';
+
+//actividades
+import { Activity1Component } from './components/juegos/activity-1/activity-1.component';
+import { Activity2Component } from './components/juegos/activity-2/activity-2.component';
+import { PruebaComponent } from './components/juegos/prueba/prueba.component';
 import { authEspecialista } from './guards/authEspecialista.guard';
 import { authGuard } from './guards/auth.guard'; 
 
@@ -24,6 +29,13 @@ export const routes: Routes = [
     {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authGuard]},
     {path: 'validarPacientes', component: DesplieguePacientesComponent, canMatch: [authEspecialista]},
     {path: 'validarEspecialistas', component: DespliegueEspecialistasComponent},
+    
+
+    //actividades
+    {path: 'activity1/:emotion',component: Activity1Component},
+    {path: 'activity2/:emotion', component: Activity2Component},
+    {path: 'prueba' , component: PruebaComponent},
+
     {path: '**', component: InicioSesionComponent},
 ];
 

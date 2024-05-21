@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet,RouterLinkActive,RouterLink } from '@angular/router';
 //ser accesible mediante otros componentes
 import { Injectable } from '@angular/core';
 
@@ -20,7 +20,7 @@ import { Observable,of } from 'rxjs';
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
-  imports: [FormsModule,CommonModule,HeaderComponent],
+  imports: [FormsModule,CommonModule,HeaderComponent,RouterOutlet,RouterLinkActive,RouterLink],
   templateUrl: './inicio-sesion.component.html',
   styleUrl: './inicio-sesion.component.css',
   providers: [conexionAzFuncService]
@@ -75,14 +75,14 @@ export class InicioSesionComponent implements OnInit{
         this.message=response.message;
         console.log(response.message);
         localStorage.setItem('correo', this.correo);
-        if(localStorage.getItem('tipo')==='2'){
-          console.log(this.tipo+'paciente')
-          localStorage.setItem('inicio', 'true');
-          this.router.navigate(['/inicioPaciente'])
-        }else{
+        if(localStorage.getItem('tipo')==='1'){
           console.log(this.tipo +'esp')
           localStorage.setItem('inicioEsp', 'true');
           this.router.navigate(['/inicioEspecialista'])
+        }else{
+          console.log(this.tipo+'paciente')
+          localStorage.setItem('inicio', 'true');
+          this.router.navigate(['/inicioPaciente'])
         }  
       },
       error: (error)=>{

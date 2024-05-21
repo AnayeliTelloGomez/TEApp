@@ -1,0 +1,58 @@
+<button mat-icon-button color="black" aria-label="clear" data-bs-toggle="modal" data-bs-target="#Backdrop">
+    <mat-icon>clear</mat-icon>
+  </button>
+  
+  <button mat-icon-button color="black" aria-label="help" class="right" data-bs-toggle="modal" data-bs-target="#Helpdrop">
+    <mat-icon>help</mat-icon>
+  </button>
+  
+  
+  <h1 class = 'titulo'>{{ emotion }}</h1>
+  
+  <mat-grid-list cols="1" rowHeight="600px">
+    <mat-grid-tile colspan="1">
+      <div class="photo-container">
+        <ngb-carousel *ngIf="images.length">
+          <ng-template ngbSlide *ngFor="let img of images; let i = index">
+            <div class="picsum-img-wrapper">
+              <img [src]="img" [alt]="'Slide ' + (i + 1)" class="carousel-photos"/>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </mat-grid-tile>
+  
+    <mat-grid-tile colspan="1" class="reduce-top-margin">
+      <button class="center" routerLink="/prueba">Siguiente</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="Backdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          Si cierras esta actividad perderas todo tu progreso
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+          <button type="button" class="btn btn-primary modal-green" data-bs-dismiss="modal" routerLink="/prueba">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Help -->
+  <div class="modal fade" id="Helpdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          En esta actividad podrás ver a diferentes personas con {{emotion}}.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

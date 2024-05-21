@@ -35,7 +35,7 @@ export class DesplieguePacientesComponent implements OnInit{
     
   validarPaciente(correo: string, idEsp: string){
     console.log(correo);
-    this.conexionAzFunc.validarPaciente(correo,idEsp).subscribe({
+    this.conexionAzFunc.validarPaciente(correo,localStorage.getItem('correo')+'').subscribe({
       next:(response)=>{
         this.success=true;
         this.error=true;
