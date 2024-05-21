@@ -12,6 +12,10 @@ import { authEspecialista } from './guards/authEspecialista.guard';
 import { authGuard } from './guards/auth.guard'; 
 
 
+//actividades
+import { PruebaComponent } from './components/actividades/prueba/prueba.component';
+
+
 
 export const routes: Routes = [
     {path: '', component: InicioComponent },
@@ -24,6 +28,10 @@ export const routes: Routes = [
     {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authGuard]},
     {path: 'validarPacientes', component: DesplieguePacientesComponent, canMatch: [authEspecialista]},
     {path: 'validarEspecialistas', component: DespliegueEspecialistasComponent},
+    {path: 'prueba', component: PruebaComponent},
+
+
+
     {path: '**', component: InicioSesionComponent},
 ];
 
