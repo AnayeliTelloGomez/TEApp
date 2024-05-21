@@ -11,7 +11,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { RouterLink, RouterLinkActive, RouterOutlet , ActivatedRoute} from '@angular/router';
@@ -46,7 +45,7 @@ export class Activity2Component implements OnInit{
 
   loadImages(emotion: string) {
     // Ruta base de las imágenes
-    const basePath = `/assets/Emociones/${emotion}/Act2/`;
+    const basePath = `../../../../assets/img/Emociones/${emotion}/Act2/`;
     // Suponiendo que tienes 3 imágenes por emoción
     this.images = [
       `${basePath}image1.jpg`,
