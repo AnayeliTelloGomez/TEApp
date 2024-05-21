@@ -76,14 +76,14 @@ export class InicioSesionComponent implements OnInit{
         this.message=response.message;
         console.log(response.message);
         localStorage.setItem('correo', this.correo);
-        if(localStorage.getItem('tipo')==='2'){
-          console.log(this.tipo+'paciente')
-          localStorage.setItem('inicio', 'true');
-          this.router.navigate(['/inicioPaciente'])
-        }else{
+        if(localStorage.getItem('tipo')==='1'){
           console.log(this.tipo +'esp')
           localStorage.setItem('inicioEsp', 'true');
           this.router.navigate(['/inicioEspecialista'])
+        }else{
+          console.log(this.tipo+'paciente')
+          localStorage.setItem('inicio', 'true');
+          this.router.navigate(['/inicioPaciente'])
         }  
       },
       error: (error)=>{
