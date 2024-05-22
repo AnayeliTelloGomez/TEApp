@@ -63,4 +63,11 @@ export class conexionAzFuncService{
     console.log(requestBody)
     return this.http.post(`${this.apiURL}/guardarInfoUsuario`,requestBody, { responseType: 'text' })
   }
+
+  asignarActividad(requestBody: any):Observable<any>{
+    console.log(requestBody)
+    return this.http.post(`${this.apiURL}/altaActividad`,requestBody)
+  }
+
+
 }
