@@ -1,0 +1,61 @@
+<app-h-paciente></app-h-paciente>
+
+<body class="bg-body-tertiary">
+    <div class="container">
+        <main class="my-3">
+            <div class="row p-0 m-0">
+                <div class="col-4">
+                    <div class="align-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="rgb(13, 110, 253)"
+                            class="bi bi-clipboard2-check-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5" />
+                            <path
+                                d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585q.084.236.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5q.001-.264.085-.5m6.769 6.854-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="col">
+                    <h1 class="h3 mb-3 text-left fw-bold">Mis Pacientes</h1>
+                </div>
+            </div>
+
+
+            <div class="tb my-5">
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Correo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Actividad</th>
+                            <th scope="col">No. de reactivos</th>
+                            <th scope="col">Asignar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let paciente of pacientes">
+                            <td>{{ paciente.correo }}</td>
+                            <td>{{ paciente.nombres }} {{paciente.paterno}} {{paciente.materno}}</td>
+                            <td class="text-center ">
+                                <select id="mySelect"  class="form-select form-select-sm" size="1">
+                                <option value="opcion1">Actividad 1</option>
+                                <option value="opcion2">Actividad 2</option>
+                                <option value="opcion3">Actividad 3</option>
+                                <option value="opcion4">Actividad 4</option>
+                                <option value="opcion5">Actividad 5</option>
+                            </select>
+                            </td>
+                            <td class="center">
+                                    <input type="number" class=" form-control" aria-label="Numero de repeticiones" min="1">
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-primary" type="submit">Asignar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+<app-menu-especialista></app-menu-especialista>

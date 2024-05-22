@@ -1,0 +1,14 @@
+.form-control{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: block;
+    margin-left: 20px;
+}
+.center{
+    width: 15%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}

@@ -25,6 +25,10 @@ export class conexionAzFuncService{
     return this.http.get<any>(`${this.apiURL}/desplieguePaciente`);
   }
 
+  pacientesAsignados(correo: string){
+    return this.http.get<any>(`${this.apiURL}/pacientesAsignados?idEsp=${correo}`);
+  }
+
   eliminarPacientee(correo: string){
     return this.http.get<any>(`${this.apiURL}/eliminarPaciente?correo=${correo}`);
   }
