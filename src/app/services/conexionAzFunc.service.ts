@@ -69,5 +69,7 @@ export class conexionAzFuncService{
     return this.http.post(`${this.apiURL}/altaActividad`,requestBody)
   }
 
-
+  despliegueActividades(correo:string){
+    return this.http.get<any>(`${this.apiURL}/despliegueActividades?correo=${correo}`);
+  }
 }

@@ -25,6 +25,7 @@ import { ResultsAct5Component } from './components/actividades/results-act5/resu
 import { NombreCapturaComponent } from './components/actividades/nombre-captura/nombre-captura.component';
 
 import { PacientesAsignadosComponent } from './components/pacientes-asignados/pacientes-asignados.component';
+import { DespliegueActividadesComponent } from './components/despliegue-actividades/despliegue-actividades.component';
 
 
 
@@ -40,8 +41,8 @@ export const routes: Routes = [
     {path: 'validarPacientes', component: DesplieguePacientesComponent, canMatch: [authEspecialista]},
     {path: 'validarEspecialistas', component: DespliegueEspecialistasComponent},
 
-    {path: 'pacientesAsignados', component: PacientesAsignadosComponent},
-
+    {path: 'pacientesAsignados', component: PacientesAsignadosComponent, canMatch: [authEspecialista]},
+    {path: 'actividadesAsignadas', component: DespliegueActividadesComponent, canMatch: [authGuard]},
     {path: 'prueba', component: PruebaComponent},
     {path: 'activity1/:emotion',component: Activity1Component},
     {path: 'activity2/:emotion',component: Activity2Component},

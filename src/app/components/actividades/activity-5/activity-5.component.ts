@@ -50,7 +50,7 @@ export class Activity5Component implements OnInit {
 
   configurarHistorias() {
     this.historias = {
-      Enojo: [
+      enojo: [
         `Había una vez un niño llamado ${this.nombre} que estaba jugando en el parque con sus amigos. Era un día soleado y todos estaban divirtiéndose mucho. Mientras jugaban al fútbol, uno de los amigos de ${this.nombre} pateó la pelota muy fuerte y golpeó a ${this.nombre} sin querer.`,
         `Después del incidente, ${this.nombre} y sus amigos decidieron construir un castillo de arena. Estaban trabajando juntos cuando un amigo accidentalmente lo derrumbó.`,
         `Más tarde, ${this.nombre} quiere jugar con un juguete, pero su amigo no quiere compartir.`,
@@ -58,7 +58,7 @@ export class Activity5Component implements OnInit {
         `Al final del día, ${this.nombre} y sus amigos se pelean por quién debe llevarse un balón a casa.`,
         `Después de hablarlo, todos estuvieron de acuerdo y decidieron seguir turnándose para llevar el balón a casa. Al final, ${this.nombre} aprendió que mantener la calma y hablar sobre sus sentimientos ayudaba a resolver los problemas de una manera más amigable y justa. Fue un día de muchas lecciones, pero también de mucha diversión.`
       ],
-      Alegria: [
+      alegria: [
         `Era el cumpleaños de ${this.nombre} y estaba muy emocionado porque todos sus amigos iban a venir a su fiesta. Mientras decoraban, ${this.nombre} accidentalmente rompió una decoración.`,
         `Los invitados comenzaron a llegar y todos estaban muy felices. Sin embargo, uno de los amigos de ${this.nombre} empezó a llorar porque no le gustaba el juego que estaban jugando.`,
         `Llega el momento de abrir los regalos y ${this.nombre} recibe un regalo que ya tiene.`,
@@ -66,7 +66,7 @@ export class Activity5Component implements OnInit {
         `Al final de la fiesta, ${this.nombre} se da cuenta de que uno de sus amigos está solo.`,
         `La fiesta terminó siendo un éxito y todos los amigos de ${this.nombre} se fueron a casa con una sonrisa en el rostro. ${this.nombre} aprendió que la alegría se multiplica cuando todos se sienten incluidos y felices.`
       ],
-      Miedo: [
+      miedo: [
         `Una noche, ${this.nombre} estaba en casa y de repente escuchó un ruido extraño afuera. ${this.nombre} estaba muy asustado y pensaba que podría ser un monstruo.`,
         `Con el apoyo de su papá, ${this.nombre} se dio cuenta de que el ruido venía de una rama golpeando la ventana. Esa noche, ${this.nombre} tuvo que enfrentarse a otro miedo: ir al baño solo durante la noche.`,
         `En la escuela, ${this.nombre} tiene que presentar un trabajo frente a la clase.`,
@@ -74,7 +74,7 @@ export class Activity5Component implements OnInit {
         `${this.nombre} ve una película de miedo en casa de un amigo.`,
         `${this.nombre} se dio cuenta de que enfrentarse a sus miedos y pedir ayuda cuando lo necesitaba lo hacía sentir más valiente. Fue una experiencia que le enseñó a manejar sus miedos con valentía y confianza.`
       ],
-      Asco: [
+      asco: [
         `Un día, ${this.nombre} fue con su familia a un restaurante nuevo que servía comida exótica. Le sirvieron un plato con ingredientes que nunca había visto.`,
         `En la escuela, ${this.nombre} encontró un insecto en su almuerzo.`,
         `Un día, ${this.nombre} tuvo que ayudar a limpiar la casa, incluyendo sacar la basura.`,
@@ -82,7 +82,7 @@ export class Activity5Component implements OnInit {
         `En casa, ${this.nombre} encontró comida vencida en el refrigerador.`,
         `Al final de su aventura, ${this.nombre} aprendió que a veces, lo que parece desagradable puede no ser tan malo y que es importante mantener la calma y buscar soluciones. Fue una lección valiosa sobre enfrentar el asco con responsabilidad y madurez.`
       ],
-      Tristeza: [
+    tristeza: [
         `Un día, ${this.nombre} se sintió muy triste porque su mascota favorita se había perdido. Estaba tan triste que no quería salir a jugar.`,
         `Al día siguiente, ${this.nombre} vio que sus amigos estaban jugando y divirtiéndose sin él.`,
         `En la escuela, ${this.nombre} no podía concentrarse porque seguía pensando en su mascota.`,
@@ -96,7 +96,7 @@ export class Activity5Component implements OnInit {
 
   configurarOpciones() {
     this.opciones = {
-      Enojo: [
+      enojo: [
         [
           { texto: `${this.nombre} se enoja mucho y empieza a gritarle al amigo.`, correcta: false },
           { texto: `${this.nombre} respira hondo y le dice a su amigo que fue un accidente.`, correcta: true }
@@ -121,7 +121,7 @@ export class Activity5Component implements OnInit {
           { texto: `¡Bien hecho ${this.nombre}!`, correcta: true }
         ]
       ],
-      Alegria: [
+      alegria: [
         [
           { texto: `${this.nombre} se siente mal y no quiere seguir decorando.`, correcta: false },
           { texto: `${this.nombre} decide arreglarlo y continuar decorando con una sonrisa.`, correcta: true }
@@ -146,7 +146,7 @@ export class Activity5Component implements OnInit {
           { texto: `¡Bien hecho ${this.nombre}!`, correcta: true }
         ]
       ],
-      Miedo: [
+      miedo: [
         [
           { texto: `${this.nombre} decide esconderse bajo la cama.`, correcta: false },
           { texto: `${this.nombre} va a buscar a su papá para contarle lo que escuchó.`, correcta: true }
@@ -171,7 +171,7 @@ export class Activity5Component implements OnInit {
           { texto: `¡Bien hecho ${this.nombre}!`, correcta: true }
         ]
       ],
-      Asco: [
+      asco: [
         [
           { texto: `${this.nombre} dice que no va a comer porque no le gusta cómo se ve.`, correcta: false },
           { texto: `${this.nombre} decide probar un poquito antes de decir que no le gusta.`, correcta: true }
@@ -196,7 +196,7 @@ export class Activity5Component implements OnInit {
           { texto: `¡Bien hecho ${this.nombre}!`, correcta: true }
         ]
       ],
-      Tristeza: [
+      tristeza: [
         [
           { texto: `${this.nombre} habla con sus padres sobre lo que siente.`, correcta: true },
           { texto: `${this.nombre} se queda en su cuarto todo el día.`, correcta: false }

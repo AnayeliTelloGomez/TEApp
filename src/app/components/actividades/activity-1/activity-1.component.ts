@@ -27,11 +27,11 @@ export class Activity1Component {
   videoId: string = '';
 
   private videos: { [key: string]: string } = {
-    'Enojo': '2I4LOH8Xt-o',
-    'Alegria': 'hyetfmz3gcM',
-    'Tristeza': 'lRIMV4TI1yo',
-    'Miedo': 'WdNMXcIoyIc',
-    'Asco': 'wcV3ZrxclQY'
+    'enojo': '2I4LOH8Xt-o',
+    'alegria': 'hyetfmz3gcM',
+    'tristeza': 'lRIMV4TI1yo',
+    'miedo': 'WdNMXcIoyIc',
+    'asco': 'wcV3ZrxclQY'
   };
 
   constructor(private route: ActivatedRoute) {}

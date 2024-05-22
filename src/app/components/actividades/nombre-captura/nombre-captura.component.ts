@@ -25,7 +25,7 @@ export class NombreCapturaComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.emocion = this.route.snapshot.paramMap.get('emotion') || 'Enojo';
+    this.emocion = this.route.snapshot.paramMap.get('emotion') || 'enojo';
   }
 
   capturarNombre() {
