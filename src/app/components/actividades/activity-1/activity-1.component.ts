@@ -50,4 +50,8 @@ export class Activity1Component {
     });
   }
 
+  finalizar(){
+    console.log('finalizar');
+  }
+
 }

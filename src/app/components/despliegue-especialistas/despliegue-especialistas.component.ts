@@ -22,6 +22,7 @@ export class DespliegueEspecialistasComponent implements OnInit{
 
   ngOnInit(): void {
     this.obtenerPacientes();
+    //this.success=false;
   }
 
   obtenerPacientes(): void{
