@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet,RouterLinkActive,RouterLink } from '@angular/router';
 //ser accesible mediante otros componentes
 import { Injectable } from '@angular/core';
 
@@ -21,7 +21,11 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
+<<<<<<< HEAD
   imports: [FormsModule,CommonModule,HeaderComponent,RouterLink,RouterLinkActive,RouterOutlet],
+=======
+  imports: [FormsModule,CommonModule,HeaderComponent,RouterOutlet,RouterLinkActive,RouterLink],
+>>>>>>> origin/master
   templateUrl: './inicio-sesion.component.html',
   styleUrl: './inicio-sesion.component.css',
   providers: [conexionAzFuncService]

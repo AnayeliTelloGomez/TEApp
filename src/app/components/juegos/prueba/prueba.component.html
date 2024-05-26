@@ -1,0 +1,147 @@
+
+<div>
+    <label>(Enojo):</label>
+    <button [routerLink]="['/activity1/Enojo']">Act1 Enojo</button>
+  </div>
+  
+  <div>
+    <label>(Alegria):</label>
+    <button [routerLink]="['/activity1/Alegria']">Act1 Alegria</button>
+  </div>
+  
+  <div>
+    <label>(Tristeza):</label>
+    <button [routerLink]="['/activity1/Tristeza']">Act1 Tristeza</button>
+  </div>
+  
+  <div>
+    <label>(Miedo):</label>
+    <button [routerLink]="['/activity1/Miedo']">Act1 Miedo</button>
+  </div>
+  
+  <div>
+    <label>(Asco):</label>
+    <button [routerLink]="['/activity1/Asco']">Act1 Asco</button>
+  </div>
+    <br>
+    <br>
+    <br>
+    <div>
+      <label>(Enojo):</label>
+      <button [routerLink]="['/activity2/Enojo']">Act2 Enojo</button>
+    </div>
+  
+    <div>
+      <label>(Alegria):</label>
+      <button [routerLink]="['/activity2/Alegria']">Act2 Alegria</button>
+    </div>
+  
+    <div>
+      <label>(Tristeza):</label>
+      <button [routerLink]="['/activity2/Tristeza']">Act2 Tristeza</button>
+    </div>
+  
+    <div>
+      <label>(Miedo):</label>
+      <button [routerLink]="['/activity2/Miedo']">Act2 Miedo</button>
+    </div>
+  
+    <div>
+      <label>(Asco):</label>
+      <button [routerLink]="['/activity2/Asco']">Act2 Asco</button>
+    </div>
+  
+    <br>
+    <br>
+    <br>
+    <div>
+      <label for="repetitionsEnojo">Número de repeticiones (Enojo):</label>
+      <input type="number" id="repetitionsEnojo" [(ngModel)]="repetitionsEnojo" min="1" value="1">
+      <button [routerLink]="['/activity3/Enojo', repetitionsEnojo]">Act3 Enojo</button>
+    </div>
+    
+    <div>
+      <label for="repetitionsAlegria">Número de repeticiones (Alegria):</label>
+      <input type="number" id="repetitionsAlegria" [(ngModel)]="repetitionsAlegria" min="1" value="1">
+      <button [routerLink]="['/activity3/Alegria', repetitionsAlegria]">Act3 Alegria</button>
+    </div>
+    
+    <div>
+      <label for="repetitionsTristeza">Número de repeticiones (Tristeza):</label>
+      <input type="number" id="repetitionsTristeza" [(ngModel)]="repetitionsTristeza" min="1" value="1">
+      <button [routerLink]="['/activity3/Tristeza', repetitionsTristeza]">Act3 Tristeza</button>
+    </div>
+  
+    <div>
+      <label for="repetitionsMiedo">Número de repeticiones (Miedo):</label>
+      <input type="number" id="repetitionsMiedo" [(ngModel)]="repetitionsMiedo" min="1" value="1">
+      <button [routerLink]="['/activity3/Miedo', repetitionsMiedo]">Act3 Miedo</button>
+    </div>
+  
+    <div>
+      <label for="repetitionsAsco">Número de repeticiones (Asco):</label>
+      <input type="number" id="repetitionsAsco" [(ngModel)]="repetitionsAsco" min="1" value="1">
+      <button [routerLink]="['/activity3/Asco', repetitionsAsco]">Act3 Asco</button>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <!-- en tu componente principal -->
+  <!-- your-component.html -->
+  <div>
+    <label for="repetitionsEnojo4">Número de repeticiones (Enojo):</label>
+    <input type="number" id="repetitionsEnojo4" [(ngModel)]="repetitionsEnojo4" min="1" value="1">
+    <button [routerLink]="['/activity4', 'Enojo', repetitionsEnojo4]">Act4 Miedo</button>
+  </div>
+  
+  <div>
+    <label for="repetitionsAlegria4">Número de repeticiones (Alegria):</label>
+    <input type="number" id="repetitionsAlegria4" [(ngModel)]="repetitionsAlegria4" min="1" value="1">
+    <button [routerLink]="['/activity4', 'Alegria', repetitionsAlegria4]">Act4 Alegria</button>
+  </div>
+  
+  <div>
+    <label for="repetitionsTristeza4">Número de repeticiones (Tristeza):</label>
+    <input type="number" id="repetitionsTristeza4" [(ngModel)]="repetitionsTristeza4" min="1" value="1">
+    <button [routerLink]="['/activity4', 'Tristeza', repetitionsTristeza4]">Act4 Tristeza</button>
+  </div>
+  
+  <div>
+    <label for="repetitionsMiedo4">Número de repeticiones (Miedo):</label>
+    <input type="number" id="repetitionsMiedo4" [(ngModel)]="repetitionsMiedo4" min="1" value="1">
+    <button [routerLink]="['/activity4', 'Miedo', repetitionsMiedo4]">Act4 Miedo</button>
+  </div>
+  
+  <div>
+    <label for="repetitionsAsco4">Número de repeticiones (Asco):</label>
+    <input type="number" id="repetitionsAsco4" [(ngModel)]="repetitionsAsco4" min="1" value="1">
+    <button [routerLink]="['/activity4', 'Asco', repetitionsAsco4]">Act4 Asco</button>
+  </div>
+  
+  <br>
+  <br>
+  <br>
+  
+  <div>
+    <label>(Enojo):</label>
+    <button [routerLink]="['/nombrecaptura', 'Enojo']">Act5 Enojo</button>
+  </div>
+  <div>
+    <label>(Alegría):</label>
+    <button [routerLink]="['/nombrecaptura', 'Alegria']">Act5 Alegría</button>
+  </div>
+  <div>
+    <label>(Tristeza):</label>
+    <button [routerLink]="['/nombrecaptura', 'Tristeza']">Act5 Tristeza</button>
+  </div>
+  <div>
+    <label>(Miedo):</label>
+    <button [routerLink]="['/nombrecaptura', 'Miedo']">Act5 Miedo</button>
+  </div>
+  <div>
+    <label>(Asco):</label>
+    <button [routerLink]="['/nombrecaptura', 'Asco']">Act5 Asco</button>
+  </div>
+  
+  
