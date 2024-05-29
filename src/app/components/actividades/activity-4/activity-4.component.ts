@@ -34,6 +34,7 @@ export class Activity4Component {
   emotion: string = '';  
   imagesPath: string = ''; 
   imageCount: number = 1;
+  idact: number = 1;
 
   sentencesEnojo: string[] = [
     'Romper un juguete favorito',
@@ -113,6 +114,7 @@ export class Activity4Component {
     this.route.paramMap.subscribe(params => {
       const emotionParam = params.get('emotion');
       const countParam = params.get('count');
+      this.idact = Number(params.get('idact')) || 1;
 
       if (emotionParam && countParam) {
         this.emotion = emotionParam;
@@ -205,7 +207,7 @@ export class Activity4Component {
     }
   
     // Navegar al componente de resultados con el número de respuestas incorrectas y correctas
-    this.router.navigate(['/resultados_act4'], {
+    this.router.navigate(['/resultados_act4',this.idact], {
       state: { incorrectCount, correctCount, elapsedTime }
     });
   }

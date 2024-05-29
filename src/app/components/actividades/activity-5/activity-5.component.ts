@@ -35,13 +35,17 @@ export class Activity5Component implements OnInit {
   opciones: { [key: string]: { texto: string, correcta: boolean }[][] } = {};
   respuestas: { texto: string, correcta: boolean }[] = [];  // Almacena las respuestas
   tiempoInicio: number = 0; // Timestamp de inicio
+  idact: number = 1;
 
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.nombre = localStorage.getItem('nombre') || 'Amigo';
-    this.emocion = this.route.snapshot.paramMap.get('emotion') || 'Enojo';
+    this.route.paramMap.subscribe(params => {
+      this.emocion = params.get('emotion') || 'Enojo';
+      this.idact = Number(params.get('idact')) || 1;
+    });
     this.configurarHistorias();
     this.configurarOpciones();
     this.actualizarHistoria();
@@ -269,7 +273,7 @@ export class Activity5Component implements OnInit {
     console.log(`Tiempo total: ${tiempoTotal} segundos`);
 
     // Navegar al componente de resultados con el estado de las respuestas
-  this.router.navigate(['/resultados_act5'], { state: { correctas: totalCorrectas, incorrectas: totalIncorrectas, tiempo: tiempoTotal } });
+  this.router.navigate(['/resultados_act5',this.idact], { state: { correctas: totalCorrectas, incorrectas: totalIncorrectas, tiempo: tiempoTotal } });
   }
 
 

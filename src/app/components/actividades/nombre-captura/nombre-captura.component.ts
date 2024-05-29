@@ -21,17 +21,23 @@ export class NombreCapturaComponent implements OnInit {
   nombre: string = '';
   nombreCapturado: boolean = false;
   emocion: string = '';
+  idact: number = 1;
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.emocion = this.route.snapshot.paramMap.get('emotion') || 'enojo';
+    this.route.paramMap.subscribe(params => {
+      this.emocion = params.get('emotion') || 'Enojo';
+      this.idact = Number(params.get('idact')) || 1;
+      console.log(this.idact);
+    });
+
   }
 
   capturarNombre() {
     if (this.nombre.trim()) {
       localStorage.setItem('nombre', this.nombre);
-      this.router.navigate(['/activity5', this.emocion]);
+      this.router.navigate(['/activity5', this.emocion, this.idact]);
     }
   }
 }

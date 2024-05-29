@@ -72,4 +72,15 @@ export class conexionAzFuncService{
   despliegueActividades(correo:string){
     return this.http.get<any>(`${this.apiURL}/despliegueActividades?correo=${correo}`);
   }
+
+  registrarPuntaje(requestBody: any):Observable<any>{
+    console.log(requestBody)
+    return this.http.post(`${this.apiURL}/registrarPuntaje`,requestBody)
+  }
+
+  guardarEstadistica(requestBody: any):Observable<any>{
+    console.log(requestBody)
+    return this.http.post(`${this.apiURL}/guardarEstadistica`,requestBody)
+  }
+
 }

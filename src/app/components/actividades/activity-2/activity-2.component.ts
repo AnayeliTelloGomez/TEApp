@@ -30,12 +30,15 @@ export class Activity2Component implements OnInit{
 
   images: string[] = [];
   emotion: string = '';
+  idact: string = '';
+
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const emotion = params.get('emotion');
+      const idact = params.get('idact');
       if (emotion) {
         this.emotion = emotion;
         this.loadImages(emotion);

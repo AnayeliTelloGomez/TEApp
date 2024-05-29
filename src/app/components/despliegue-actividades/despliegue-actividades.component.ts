@@ -60,16 +60,16 @@ export class DespliegueActividadesComponent implements OnInit {
                 return '../../../assets/img/Emociones/imgCard/act5.png';   
   }
   
-  ruta(act:string, emocion:string, reactivos:string){
+  ruta(act:string, emocion:string, reactivos:string, idact:string){
     if(act==='activity1')
-      return '/'+act+'/'+emocion;
+      return '/'+act+'/'+emocion+'/'+idact;
     else if(act==='activity2')
-          return '/'+act+'/'+emocion;
+          return '/'+act+'/'+emocion+'/'+idact;
         else if(act==='activity3')
-              return '/'+act+'/'+emocion+'/'+reactivos;
+              return '/'+act+'/'+emocion+'/'+reactivos+'/'+idact;
             else if(act==='activity4')
-                return '/'+act+'/'+emocion+'/'+reactivos;
+                return '/'+act+'/'+emocion+'/'+reactivos+'/'+idact;
                 else
-                  return '/'+'nombrecaptura'+'/'+emocion;
+                  return '/'+'nombrecaptura'+'/'+emocion+'/'+idact;
   }
 }

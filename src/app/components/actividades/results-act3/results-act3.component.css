@@ -1,0 +1,89 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  :host {
+    display: block;
+    /*background-color: rgba(239, 244, 245, 0.812);*/
+    height: 100%;  
+    overflow-y: auto;
+    background-image: url('../../../../assets/img/background.jpg');
+    background-size: cover; /* para cubrir todo el área del fondo */
+    background-position: center; /* para centrar la imagen */
+  }
+
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    width: auto;
+    max-height: 600px; /* Asume que el contenedor toma toda la altura de la ventana */
+    max-width: 800px;
+    background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
+    padding: 10px;
+    box-shadow: 
+    0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 10px; /* Espacio alrededor del contenedor */
+    box-sizing: border-box;
+    position:relative;
+    overflow: hidden;
+  }
+
+
+  .center1{
+    display: grid;
+    align-items: center;
+    text-align: center;
+    place-items: center;
+  }
+
+  .titulo{
+    justify-content: center;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(0, 0, 0);
+  }
+
+
+  .center {
+    width: 600px; /* Ancho automático para ocupar todo el ancho disponible */
+    height: 40px; /* Ajusta la altura según sea necesario */
+    background-color: #57c95b; /* Color verde */
+    border: none; /* Quita el borde */
+    border-radius: 20px; /* Hace que el botón sea ovalado */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    text-decoration: none; /* Quita la subrayado del texto */
+    display: flex; /* Usa flexbox para centrar horizontalmente */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    outline: none; /* Quita el contorno al hacer clic en el botón */
+    padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    font-family: Helvetica, sans-serif; /* Tipo de letra */
+    font-weight: bold;
+    box-shadow: 
+    0px 2px 0px 4px #2faf35; 
+    transition: transform 0.3s ease 0s;
+  }
+  
+  
+  .center:hover {
+    transform: translateY(-10px);
+    background-color: #45a049; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+  }
+  
+  .center:active {
+    background-color: #367939; /* Cambia el color de fondo cuando se hace clic en el botón */
+  }

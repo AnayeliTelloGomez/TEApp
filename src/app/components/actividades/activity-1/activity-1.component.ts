@@ -25,6 +25,7 @@ export class Activity1Component {
   
   emotion: string = '';
   videoId: string = '';
+  idact: string = '';
 
   private videos: { [key: string]: string } = {
     'enojo': '2I4LOH8Xt-o',

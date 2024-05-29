@@ -33,6 +33,7 @@ export class Activity3Component {
   emotion: string = '';
   currentImages: string[] = [];
   usedPairs: Set<string> = new Set();
+  idact: number = 1;
 
 
   constructor(private route: ActivatedRoute, private router: Router, private answerService: AnswersAct3Service) {}
@@ -41,6 +42,8 @@ export class Activity3Component {
     this.route.paramMap.subscribe(params => {
       this.emotion = params.get('emotion') || 'Enojo';
       this.repetitions = Number(params.get('repetitions')) || 1;
+      this.idact = Number(params.get('idact')) || 1;
+      console.log(this.idact);
       this.setNewImages();
 
       if (this.currentRepetition === 1) {
@@ -98,7 +101,7 @@ export class Activity3Component {
       this.currentRepetition++;
       this.setNewImages();
     } else {
-      this.router.navigate(['/resultados_act3']);
+      this.router.navigate(['/resultados_act3', this.idact]);
     }
   }
 
