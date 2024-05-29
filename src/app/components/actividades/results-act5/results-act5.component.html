@@ -1,4 +1,63 @@
-<h2>Resultados de la Actividad</h2>
-<p>Total de respuestas correctas: {{ correctas }}</p>
-<p>Total de respuestas incorrectas: {{ incorrectas }}</p>
-<p>Tiempo total: {{ tiempo }} segundos</p>
+<br>
+<br>
+<div>
+    <h2 class="titulo">Resultados</h2>
+</div>
+
+<br>
+<br>
+ 
+<div class="center1">
+<div class="contenedor">
+  <ngx-charts-bar-vertical-2d
+  [view]="view"
+  scheme="cool"
+  [results]="multi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [legendTitle]="legendTitle"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)">
+</ngx-charts-bar-vertical-2d>
+
+</div>
+</div>
+
+<div class="center1">
+  <div class="contenedor">
+  <ngx-charts-line-chart
+  [view]="view"
+  scheme="cool"
+  [gradient]="gradient2"
+  [xAxis]="showXAxis2"
+  [yAxis]="showYAxis2"
+  [showXAxisLabel]="showXAxisLabel2"
+  [showYAxisLabel]="showYAxisLabel2"
+  [xAxisLabel]="xAxisLabel2"
+  [yAxisLabel]="yAxisLabel2"
+  [results]="multi2"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-line-chart>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<button class="center" (click)="guardarEst()" routerLink="/actividadesAsignadas">Siguiente</button>
+
+<br>
+<br>
+<br>
+<br>
