@@ -47,18 +47,18 @@
                                     <option value="asco">Asco</option>
                                 </select>
                             </td>
-                            <td class="text-center ">
-                                <select id="mySelect" class="form-select form-select-sm" size="1" [(ngModel)]="act" name="act">
-                                    <option value="activity1">Actividad 1</option>
-                                    <option value="activity2">Actividad 2</option>
-                                    <option value="activity3">Actividad 3</option>
-                                    <option value="activity4">Actividad 4</option>
-                                    <option value="activity5">Actividad 5</option>
+                            <td class="text-center">
+                                <select id="mySelect" class="form-select form-select-sm" size="1" [(ngModel)]="act" name="act" (change)="handleSelectChange()">
+                                  <option value="activity1">Actividad 1</option>
+                                  <option value="activity2">Actividad 2</option>
+                                  <option value="activity3">Actividad 3</option>
+                                  <option value="activity4">Actividad 4</option>
+                                  <option value="activity5">Actividad 5</option>
                                 </select>
-                            </td>
-                            <td class="center">
-                                <input type="number" class=" form-control" aria-label="Numero de repeticiones" min="1" [(ngModel)]="reactivo" name="reactivo">
-                            </td>
+                              </td>
+                              <td class="center">
+                                <input type="number" class="form-control" aria-label="Numero de repeticiones" min="1" [(ngModel)]="reactivo" name="reactivo" [disabled]="act === 'activity1' || act === 'activity2' || act === 'activity5'">
+                              </td>                              
                             <td class="text-center">
                                 <button class="btn btn-primary" type="submit" (click)="asignarAct(paciente.idpaciente,paciente.idespecialista)">Asignar</button>
                             </td>

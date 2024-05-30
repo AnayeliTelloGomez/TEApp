@@ -83,4 +83,9 @@ export class conexionAzFuncService{
     return this.http.post(`${this.apiURL}/guardarEstadistica`,requestBody)
   }
 
+  estadisticaPaciente(requestBody: any): Observable<any> {
+    console.log(requestBody);
+    return this.http.post<any>(`${this.apiURL}/estadisticaPaciente`, requestBody);
+  }
+
 }

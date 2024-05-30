@@ -1,18 +1,22 @@
-import { Component, OnInit} from '@angular/core';
-import { conexionAzFuncService } from '../../services/conexionAzFunc.service';
-import { HPacienteComponent } from '../h-paciente/h-paciente.component';
-import { MenuEspecialistaComponent } from '../menu-especialista/menu-especialista.component';
+import { Component, OnInit } from '@angular/core';
+import { conexionAzFuncService } from '../../../services/conexionAzFunc.service';
+import { HPacienteComponent } from '../../h-paciente/h-paciente.component';
+import { MenuEspecialistaComponent } from '../../menu-especialista/menu-especialista.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink,RouterOutlet, RouterLinkActive,ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-pacientes-asignados',
+  selector: 'app-estadistica-especialista',
   standalone: true,
-  imports: [HPacienteComponent,MenuEspecialistaComponent,CommonModule, FormsModule],
-  templateUrl: './pacientes-asignados.component.html',
-  styleUrl: './pacientes-asignados.component.css'
+  imports: [HPacienteComponent,MenuEspecialistaComponent,CommonModule, FormsModule,
+    RouterLink,RouterOutlet, RouterLinkActive,
+  ],
+  templateUrl: './estadistica-especialista.component.html',
+  styleUrls: ['./estadistica-especialista.component.css']
 })
-export class PacientesAsignadosComponent implements OnInit{
+export class EstadisticaEspecialistaComponent implements OnInit {
+
   pacientes: any[]=[];
   mensajeEliminado: string='';
   success: boolean=false;
@@ -36,12 +40,6 @@ export class PacientesAsignadosComponent implements OnInit{
     this.pacientesAsignados();
   }
 
-  handleSelectChange() {
-    // Si se selecciona activity1, activity2 o activity5, deshabilita el input y establece su valor en 1
-    if (this.act === 'activity1' || this.act === 'activity2' || this.act === 'activity5') {
-      this.reactivo = '1';
-    }
-  }
 
   pacientesAsignados(): void{
     this.conexionAzFunc.pacientesAsignados(localStorage.getItem('correo')+'').subscribe(data => {
@@ -77,7 +75,4 @@ export class PacientesAsignadosComponent implements OnInit{
         }
       });
   }
-    
-
-
 }

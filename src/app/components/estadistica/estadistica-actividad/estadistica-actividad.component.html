@@ -1,0 +1,73 @@
+<app-h-paciente></app-h-paciente>
+
+<div  class="centrado">
+<div>
+  <h2>Gráfica de Respuestas Correctas</h2>
+  <div class="contenedor">
+    <ngx-charts-line-chart
+      [view]="view"
+      scheme="cool"
+      [results]="correctasData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel">
+    </ngx-charts-line-chart>
+  </div>
+
+  <h2>Gráfica de Respuestas Incorrectas</h2>
+  <div class="contenedor">
+    <ngx-charts-line-chart
+      [view]="view"
+      scheme="cool"
+      [results]="incorrectasData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel">
+    </ngx-charts-line-chart>
+  </div>
+
+  <h2>Gráfica de Tiempo</h2>
+  <div class="contenedor">
+    <ngx-charts-line-chart
+      [view]="view"
+      scheme="cool"
+      [results]="tiempoData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabelTime">
+    </ngx-charts-line-chart>
+  </div>
+
+  <h2>Gráfica Total de Respuestas</h2>
+  <div class="contenedor">
+    <ngx-charts-bar-vertical
+      [view]="view"
+      scheme="cool"
+      [results]="totalData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-vertical>
+  </div>
+</div>
+</div>

@@ -1,0 +1,33 @@
+/* charts.component.css */
+:host {
+    display: block;
+    margin: 20px;
+  }
+  
+  .contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    width: auto;
+    max-height: 600px; /* Asume que el contenedor toma toda la altura de la ventana */
+    max-width: 800px;
+    background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
+    padding: 10px;
+    box-shadow: 
+    0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 10px; /* Espacio alrededor del contenedor */
+    box-sizing: border-box;
+    position:relative;
+    overflow: hidden;
+  }
+
+  .centrado{
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 60%; /* O el ancho que desees */
+    margin: 0 auto;
+  }

@@ -31,6 +31,15 @@ import { DespliegueActividadesComponent } from './components/despliegue-activida
 
 
 
+//estadistica
+import { EmocionesPacienteComponent } from './components/estadistica/emociones-paciente/emociones-paciente.component';
+import { ActividadesPacienteComponent } from './components/estadistica/actividades-paciente/actividades-paciente.component';
+import { EstadisticaActividadComponent } from './components/estadistica/estadistica-actividad/estadistica-actividad.component';
+import { EstadisticaEspecialistaComponent } from './components/estadistica/estadistica-especialista/estadistica-especialista.component';
+import { EmocionesEspecialistaComponent } from './components/estadistica/emociones-especialista/emociones-especialista.component';
+
+
+
 export const routes: Routes = [
     {path: '', component: InicioComponent },
     {path: 'registro', component: AltaUsuarioComponent},
@@ -54,7 +63,15 @@ export const routes: Routes = [
     {path: 'resultados_act3/:idact', component: ResultsAct3Component},
     {path: 'resultados_act4/:idact', component: ResultsAct4Component},
     {path: 'resultados_act5/:idact', component: ResultsAct5Component},
-    { path: 'nombrecaptura/:emotion/:idact', component: NombreCapturaComponent},
+    {path: 'nombrecaptura/:emotion/:idact', component: NombreCapturaComponent},
+
+    {path: 'emocionEstadisticaPaciente/:idpaciente', component: EmocionesPacienteComponent},
+    {path: 'actividadEstadisticaPaciente/:emotion/:idpaciente', component: ActividadesPacienteComponent},
+    {path: 'estadisticaActividad/:emotion/:activity/:reactivo/:idpaciente', component: EstadisticaActividadComponent},
+    {path: 'estadisticaEspecialista', component: EstadisticaEspecialistaComponent},
+    {path: 'emocionEstadisticaEspecialista/:idpaciente', component: EmocionesEspecialistaComponent},
+
+
     {path: '**', component: InicioSesionComponent},
 ];
 
