@@ -67,10 +67,10 @@ export class Activity4Component {
     'Encuentras un insecto en tu comida',
     'Tienes que limpiar algo muy sucio',
     'Alguien estornuda sin cubrirse cerca de ti',
-    'Ves basura acumulada en la calle',
-    'Hueles algo podrido en la nevera',
+    'Tocas basura en la calle',
+    'Comes algo podrido de la nevera',
     'Te salpica agua sucia de un charco',
-    'Ves a alguien no lavarse las manos después de usar el baño',
+    'Te caes y te ensucias de tierra',
     'Comes algo con un sabor horrible',
     'Encuentras un pelo en tu comida',
     'Te ensucias con barro inesperadamente',
@@ -80,14 +80,12 @@ export class Activity4Component {
   sentencesMiedo: string[] = [
     'Escuchas ruidos extraños en la noche',
     'Te pierdes en un lugar desconocido',
-    'Alguien te sigue en la calle',
     'Ves una película de terror solo',
     'Recibes una llamada telefónica aterradora',
     'Te encuentras en medio de una tormenta fuerte',
     'Tu mascota desaparece de repente',
     'Sientes que te observan cuando estás solo',
     'Tienes que dar un discurso en público',
-    'Te encuentras con un animal peligroso',
     // Añade más oraciones aquí según sea necesario
   ];
   
@@ -95,7 +93,6 @@ export class Activity4Component {
     'Te despides de un amigo que se muda lejos',
     'Pierdes un objeto muy querido',
     'No te invitan a una fiesta a la que querías ir',
-    'Tus padres discuten frente a ti',
     'Te sientes solo en el recreo',
     'Un ser querido se enferma',
     'No puedes ir a un evento importante',
