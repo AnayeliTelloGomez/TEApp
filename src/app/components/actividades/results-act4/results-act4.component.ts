@@ -45,7 +45,7 @@ export class ResultsAct4Component implements OnInit {
     // Inicializa `multi` con los valores correctos
     this.multi = [
       {
-        "name": "Actividad 3",
+        "name": "Actividad 4",
         "series": [
          {
            "name": "Correctas",
@@ -64,7 +64,7 @@ export class ResultsAct4Component implements OnInit {
   // Inicializa `multi2` con los valores correctos
   this.multi2 = [
     {
-      "name": "Actividad 3",
+      "name": "Actividad 4",
       "series": [
         {
           "name": "0",

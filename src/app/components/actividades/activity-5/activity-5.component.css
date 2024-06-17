@@ -136,7 +136,29 @@ p {
       text-align: center;
       width: 300px; /* Ancho automático para ocupar todo el ancho disponible */
       height: 40px; /* Ajusta la altura según sea necesario */
-      max-width: 300px;
+      max-width: 400px;
+      max-height: 200px;
+      background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
+      box-shadow: 
+      0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
+      border-radius: 10px; /* Bordes redondeados */
+      box-sizing: border-box;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      line-height: 1.2;
+      padding: 0 10px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+      margin-top: 20px;
+    }
+
+    .container3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: auto;
+      height: auto;/* Ancho automático para ocupar todo el ancho disponible *//* Ajusta la altura según sea necesario */
+      max-width: 400px;
+      max-height: 200px;
       background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
       box-shadow: 
       0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
@@ -146,4 +168,36 @@ p {
       line-height: 1.2;
       padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
       margin: 0 auto; /* Centra el botón horizontalmente */
+      margin-top: 10px;
     }
+
+    .historia-imagen {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    .container-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: auto;
+      height: auto;/* Ancho automático para ocupar todo el ancho disponible *//* Ajusta la altura según sea necesario */
+      max-width: 500px;
+      max-height: 600px;
+      background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
+      box-shadow: 
+      0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
+      border-radius: 10px; /* Bordes redondeados */
+      box-sizing: border-box;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      line-height: 1.2;
+      padding: 10px 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+    
