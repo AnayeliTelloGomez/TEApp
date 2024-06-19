@@ -42,20 +42,6 @@ export class InicioSesionAdminComponent implements OnInit{
   //servicio
   constructor (private conexionAzFunc: conexionAzFuncService, private router: Router) { }
 
-  tipoUser(){
-    if(this.tipoUsuarioBtn){
-      this.tipoUsuario='Especialista';
-      this.tipo='1';
-      localStorage.setItem('tipo', '1');
-      console.log(this.tipoUsuario+this.tipo)
-    }else{
-      this.tipoUsuario='Paciente';
-      this.tipo='2';
-      localStorage.setItem('tipo', '2');
-      console.log(this.tipoUsuario+this.tipo);
-    }
-  }
-
   verificar(){
     //creacion de obj a enviar
     const usuarioIncio: usuarioInicio = {
@@ -72,18 +58,13 @@ export class InicioSesionAdminComponent implements OnInit{
         this.message=response.message;
         console.log(response.message);
         localStorage.setItem('correo', this.correo);
-        if(localStorage.getItem('tipo')==='4'){
-          console.log(this.tipo +'esp')
-          localStorage.setItem('inicioEsp', 'true');
-          //this.router.navigate(['/inicioEspecialista'])
-        }  
+          console.log(this.tipo +'admin')
+          localStorage.setItem('inicioAdmin', 'true');
+          this.router.navigate(['/inicioAdmin'])  
       },
       error: (error)=>{
         this.inicioDenied=false;
-        if(this.tipo==='2')
-          localStorage.setItem('inicio', 'false');
-        else
-          localStorage.setItem('inicioEsp', 'false');
+        localStorage.setItem('inicioAdmin', 'false');
         console.error('Credenciales erroneas: ',error.error.message);
         this.message='Correo o contraseña incorrectos.'
       }
@@ -93,17 +74,7 @@ export class InicioSesionAdminComponent implements OnInit{
 
   //avisarle al guard que se inicio sesion correctamente
   getAuthToken(): Observable<boolean>{
-    if(localStorage.getItem('inicio')==='true')
-      return of(true);
-    else{
-      return of(false);
-    }
-  }
-
-  //avisarle al guard que se inicio sesion correctamente
-  getAuthTokenEsp(): Observable<boolean>{
-    console.log(localStorage.getItem)
-    if(localStorage.getItem('inicioEsp')==='true')
+    if(localStorage.getItem('inicioAdmin')==='true')
       return of(true);
     else{
       return of(false);

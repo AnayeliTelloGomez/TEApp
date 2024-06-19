@@ -1,0 +1,22 @@
+.container {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+  .jumbotron {
+    background-color: #e9ecef;
+  }
+  .heading-animation {
+    position: relative;
+    display: inline-block;
+  }
+  .heading-animation span {
+    display: inline-block;
+    animation: bounce 2s infinite alternate;
+  }
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+  }
+
+
+  
