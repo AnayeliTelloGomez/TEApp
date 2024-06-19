@@ -31,6 +31,7 @@ export class InicioSesionAdminComponent implements OnInit{
   correo: string='';
   contrasena: string='';
   tipo: string='4';
+  
   //controlar el mennsaje de credenciales incorrectas
   inicioDenied: boolean=true;
   //el mensaje a mostrar en el alert
@@ -58,9 +59,10 @@ export class InicioSesionAdminComponent implements OnInit{
         this.message=response.message;
         console.log(response.message);
         localStorage.setItem('correo', this.correo);
-          console.log(this.tipo +'admin')
-          localStorage.setItem('inicioAdmin', 'true');
-          this.router.navigate(['/inicioAdmin'])  
+        localStorage.setItem('tipo',this.tipo)
+        console.log(this.tipo +'admin')
+        localStorage.setItem('inicioAdmin', 'true');
+        this.router.navigate(['/inicioAdmin'])  
       },
       error: (error)=>{
         this.inicioDenied=false;

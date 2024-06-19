@@ -13,7 +13,7 @@ export class MenuuAdminComponent {
   constructor (private router: Router){}
 
   cierreSesion(){
-    localStorage.setItem('inicioEsp', 'false');
+    localStorage.setItem('inicioAdmin', 'false');
     this.router.navigate(['']);
   }
 

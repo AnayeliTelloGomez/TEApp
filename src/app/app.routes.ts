@@ -54,6 +54,7 @@ export const routes: Routes = [
     {path: 'inicioAdmin', component: BienvendaAdminComponent, canMatch: [authAdmin]},
     {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authEspecialista]},
     {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authGuard]},
+    {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authAdmin]},
     {path: 'validarPacientes', component: DesplieguePacientesComponent, canMatch: [authEspecialista]},
     {path: 'validarEspecialistas', component: DespliegueEspecialistasComponent, canMatch: [authAdmin]},
 

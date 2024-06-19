@@ -8,10 +8,11 @@ import { CommonModule } from '@angular/common';
 import { HPacienteComponent } from '../h-paciente/h-paciente.component';
 import { MenuEspecialistaComponent } from '../menu-especialista/menu-especialista.component';
 import { MnuPacienteComponent } from '../mnu-paciente/mnu-paciente.component';
+import { MenuuAdminComponent } from '../menuu-admin/menuu-admin.component';
 @Component({
   selector: 'app-modificar-datos',
   standalone: true,
-  imports: [FormsModule,CommonModule,HPacienteComponent,MenuEspecialistaComponent,MnuPacienteComponent,],
+  imports: [FormsModule,CommonModule,HPacienteComponent,MenuEspecialistaComponent,MnuPacienteComponent,MenuuAdminComponent],
   templateUrl: './modificar-datos.component.html',
   styleUrl: './modificar-datos.component.css'
 })
@@ -23,6 +24,7 @@ export class ModificarDatosComponent implements OnInit{
   paterno: string='';
   materno: string='';
   tipo: string=localStorage.getItem('tipo')+'';
+  
   altaSuccess: boolean =false;
   altaError: boolean =true;
   submitted: boolean= false;
@@ -30,6 +32,8 @@ export class ModificarDatosComponent implements OnInit{
 
   ngOnInit(): void {
     this.datosUsuario();
+    console.log(this.tipo);
+    
   }
 
   constructor(private conexionAzFunc:conexionAzFuncService){ }
