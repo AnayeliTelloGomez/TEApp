@@ -201,3 +201,39 @@ p {
       margin-top: 40px;
     }
     
+
+    .center-back {
+      width: 600px; /* Ancho automático para ocupar todo el ancho disponible */
+      height: 40px; /* Ajusta la altura según sea necesario */
+      background-color: #c95757; /* Color verde */
+      border: none; /* Quita el borde */
+      border-radius: 20px; /* Hace que el botón sea ovalado */
+      color: white; /* Color del texto */
+      text-align: center; /* Centra el texto horizontalmente */
+      text-decoration: none; /* Quita la subrayado del texto */
+      display: flex; /* Usa flexbox para centrar horizontalmente */
+      align-items: center; /* Centra verticalmente el contenido */
+      justify-content: center; /* Centra horizontalmente el contenido */
+      font-size: 16px; /* Tamaño de la fuente */
+      cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+      outline: none; /* Quita el contorno al hacer clic en el botón */
+      padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-family: Helvetica, sans-serif; /* Tipo de letra */
+      font-weight: bold;
+      box-shadow: 
+      0px 2px 0px 4px #af2f2f; 
+      transition: transform 0.3s ease 0s;
+    }
+    
+    
+    .center-back:hover {
+      transform: translateY(-10px);
+      background-color: #a04545; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+    }
+    
+    .center-back:active {
+      background-color: #793636; /* Cambia el color de fondo cuando se hace clic en el botón */
+    }
