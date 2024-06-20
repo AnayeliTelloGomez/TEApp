@@ -111,3 +111,30 @@ html, body {
     position: absolute;
     right: 0;
   }
+
+
+
+  #feedback-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Asegúrate de que esté sobre otros elementos */
+    display: none; /* Inicialmente oculto */
+  }
+  
+  .feedback-image {
+    width: 500px;
+    height: 500px;
+  }
+  
+  #feedback-container.show {
+    display: block; /* Mostrar el contenedor cuando se añade la clase 'show' */
+    animation: fadeInOut 2s forwards; /* Animación que dura 2 segundos */
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  

@@ -35,6 +35,10 @@ export class Activity3Component {
   usedPairs: Set<string> = new Set();
   idact: number = 1;
 
+  showFeedback: boolean = false;
+  feedbackImage: string = '';
+
+
 
   constructor(private route: ActivatedRoute, private router: Router, private answerService: AnswersAct3Service) {}
 
@@ -93,9 +97,17 @@ export class Activity3Component {
   }
 
 
-  onButtonClick(selectedImage: string) {
-    const isCorrect = selectedImage.startsWith('correct');
-    this.answerService.addAnswer(isCorrect, selectedImage);
+onButtonClick(selectedImage: string) {
+  const isCorrect = selectedImage.startsWith('correct');
+  this.answerService.addAnswer(isCorrect, selectedImage);
+
+  // Establecer la imagen de feedback según la respuesta
+  this.feedbackImage = isCorrect ? '../../../../assets/img/respuestas/good.png' : '../../../../assets/img/respuestas/bad.png';
+  this.showFeedback = true;
+
+  // Ocultar la imagen de feedback después de 2 segundos
+  setTimeout(() => {
+    this.showFeedback = false;
 
     if (this.currentRepetition < this.repetitions) {
       this.currentRepetition++;
@@ -103,7 +115,9 @@ export class Activity3Component {
     } else {
       this.router.navigate(['/resultados_act3', this.idact]);
     }
-  }
+  }, 2000);
+}
+
 
 
   getImagePath(imageName: string): string {

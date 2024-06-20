@@ -37,69 +37,22 @@ export class Activity4Component {
   idact: number = 1;
 
   sentencesEnojo: string[] = [
-    'Romper un juguete favorito',
-    'No ganar en un juego',
-    'Alguien se burla de ti',
-    'No te dejan elegir la película',
-    'Alguien toma tu asiento favorito',
-    'No te sale bien una tarea',
-    'Tu familia toma tus cosas sin permiso',
-    'Alguien interrumpe tu juego',
-    'Se derrama tu bebida favorita',
-    'Te quitan tu turno en una fila',
-    // Añade más oraciones aquí según sea necesario
+    '¿Quién está enojado?'
   ];
   sentencesFelicidad: string[] = [
-    'Recibes un regalo sorpresa',
-    'Te dan buenas noticias sobre unas vacaciones',
-    'Ganas un premio en un concurso',
-    'Te felicitan por tu buen trabajo en la escuela',
-    'Encuentras a un amigo que no veías hace tiempo',
-    'Te invitan a una fiesta de cumpleaños',
-    'Haces algo que siempre quisiste hacer (como montar en bicicleta)',
-    'Te dan un cumplido por tu habilidad o talento',
-    'Tienes una tarde divertida con tu familia o amigos',
-    'Logras aprender algo nuevo',
-    // Añade más oraciones aquí según sea necesario
+    '¿Quién está alegre?'
   ];
 
   sentencesAsco: string[] = [
-    'Encuentras un insecto en tu comida',
-    'Tienes que limpiar algo muy sucio',
-    'Alguien estornuda sin cubrirse cerca de ti',
-    'Tocas basura en la calle',
-    'Comes algo podrido de la nevera',
-    'Te salpica agua sucia de un charco',
-    'Te caes y te ensucias de tierra',
-    'Comes algo con un sabor horrible',
-    'Encuentras un pelo en tu comida',
-    'Te ensucias con barro inesperadamente',
-    // Añade más oraciones aquí según sea necesario
+    '¿Quién siente asco?'
   ];
   
   sentencesMiedo: string[] = [
-    'Escuchas ruidos extraños en la noche',
-    'Te pierdes en un lugar desconocido',
-    'Ves una película de terror solo',
-    'Recibes una llamada telefónica aterradora',
-    'Te encuentras en medio de una tormenta fuerte',
-    'Tu mascota desaparece de repente',
-    'Sientes que te observan cuando estás solo',
-    'Tienes que dar un discurso en público',
-    // Añade más oraciones aquí según sea necesario
+    '¿Quién tiene miedo?'
   ];
   
   sentencesTristeza: string[] = [
-    'Te despides de un amigo que se muda lejos',
-    'Pierdes un objeto muy querido',
-    'No te invitan a una fiesta a la que querías ir',
-    'Te sientes solo en el recreo',
-    'Un ser querido se enferma',
-    'No puedes ir a un evento importante',
-    'Tu mascota fallece',
-    'Alguien dice algo hiriente sobre ti',
-    'Fracasar en un examen importante',
-    // Añade más oraciones aquí según sea necesario
+    '¿Quién está triste?'
   ];
   
   selectedSentence: string = '';
@@ -131,16 +84,16 @@ export class Activity4Component {
   }
 
   selectRandomSentence(): void {
-    if(this.emotion == "Enojo"){
+    if(this.emotion == "enojo"){
       const randomIndex = Math.floor(Math.random() * this.sentencesEnojo.length);
       this.selectedSentence = this.sentencesEnojo[randomIndex];
-    } else if(this.emotion =="Alegria"){
+    } else if(this.emotion =="alegria"){
       const randomIndex = Math.floor(Math.random() * this.sentencesFelicidad.length);
       this.selectedSentence = this.sentencesFelicidad[randomIndex];
-    }else if(this.emotion =="Asco"){
+    }else if(this.emotion =="asco"){
       const randomIndex = Math.floor(Math.random() * this.sentencesAsco.length);
       this.selectedSentence = this.sentencesAsco[randomIndex];
-    }else if(this.emotion =="Miedo"){
+    }else if(this.emotion =="miedo"){
       const randomIndex = Math.floor(Math.random() * this.sentencesMiedo.length);
       this.selectedSentence = this.sentencesMiedo[randomIndex];
     }else{

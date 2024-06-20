@@ -349,36 +349,36 @@ export class Activity5Component implements OnInit {
         '../../../../assets/img/hist/enojo/6.jpg'
       ],
       alegria: [
-        'assets/images/alegria1.jpg',
-        'assets/images/alegria2.jpg',
-        'assets/images/alegria3.jpg',
-        'assets/images/alegria4.jpg',
-        'assets/images/alegria5.jpg',
-        'assets/images/alegria6.jpg'
+        '../../../../assets/img/hist/alegria/1.jpg',
+        '../../../../assets/img/hist/alegria/2.jpg',
+        '../../../../assets/img/hist/alegria/3.jpg',
+        '../../../../assets/img/hist/alegria/4.jpg',
+        '../../../../assets/img/hist/alegria/5.jpg',
+        '../../../../assets/img/hist/alegria/6.jpg'
       ],
       miedo: [
-        'assets/images/miedo1.jpg',
-        'assets/images/miedo2.jpg',
-        'assets/images/miedo3.jpg',
-        'assets/images/miedo4.jpg',
-        'assets/images/miedo5.jpg',
-        'assets/images/miedo6.jpg'
+        '../../../../assets/img/hist/miedo/1.jpg',
+        '../../../../assets/img/hist/miedo/2.jpg',
+        '../../../../assets/img/hist/miedo/3.jpg',
+        '../../../../assets/img/hist/miedo/4.jpg',
+        '../../../../assets/img/hist/miedo/5.jpg',
+        '../../../../assets/img/hist/miedo/6.jpg'
       ],
       asco: [
-        'assets/images/asco1.jpg',
-        'assets/images/asco2.jpg',
-        'assets/images/asco3.jpg',
-        'assets/images/asco4.jpg',
-        'assets/images/asco5.jpg',
-        'assets/images/asco6.jpg'
+        '../../../../assets/img/hist/asco/1.jpg',
+        '../../../../assets/img/hist/asco/2.jpg',
+        '../../../../assets/img/hist/asco/3.jpg',
+        '../../../../assets/img/hist/asco/4.jpg',
+        '../../../../assets/img/hist/asco/5.jpg',
+        '../../../../assets/img/hist/asco/6.jpg'
       ],
       tristeza: [
-        'assets/images/tristeza1.jpg',
-        'assets/images/tristeza2.jpg',
-        'assets/images/tristeza3.jpg',
-        'assets/images/tristeza4.jpg',
-        'assets/images/tristeza5.jpg',
-        'assets/images/tristeza6.jpg'
+        '../../../../assets/img/hist/tristeza/1.jpg',
+        '../../../../assets/img/hist/tristeza/2.jpg',
+        '../../../../assets/img/hist/tristeza/3.jpg',
+        '../../../../assets/img/hist/tristeza/4.jpg',
+        '../../../../assets/img/hist/tristeza/5.jpg',
+        '../../../../assets/img/hist/tristeza/6.jpg'
       ]
     };
   }

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {
-  CdkDrag,
-  CdkDropList,
-} from '@angular/cdk/drag-drop';
+import { conexionAzFuncService } from '../../../services/conexionAzFunc.service';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
@@ -30,10 +27,32 @@ export class Activity2Component implements OnInit{
 
   images: string[] = [];
   emotion: string = '';
-  idact: string = '';
+  idact: number = 1;
 
 
-  constructor(private route: ActivatedRoute) {}
+
+  correctCount: number = 0;
+  incorrectCount: number = 0;
+  elapsedTime: number = 0;
+  correo: string = localStorage.getItem('correo') + '';
+
+  pacientes: any[]=[];
+  mensajeEliminado: string='';
+  success: boolean=false;
+  error: boolean=true;
+  mensaje: string='';
+  
+  emocion: string='';
+  act: string='';
+  reactivo: string='';
+  altaSuccess: boolean =false;
+  altaError: boolean =true;
+  submitted: boolean= false;
+  altaMessage: string='';
+
+
+
+  constructor(private route: ActivatedRoute,private conexionAzFunc:conexionAzFuncService ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -42,6 +61,7 @@ export class Activity2Component implements OnInit{
       if (emotion) {
         this.emotion = emotion;
         this.loadImages(emotion);
+        this.idact = Number(params.get('idact')) || 1;
       }
     });
   }
@@ -62,5 +82,34 @@ export class Activity2Component implements OnInit{
       `${basePath}image9.jpg`,
       `${basePath}image10.jpg`
     ];
+  }
+
+
+  guardarEst(){
+    console.log(this.correctCount+' '+this.incorrectCount+' '+this.elapsedTime);
+    const estadistica = {
+      idact:this.idact+'',
+      correctas: this.correctCount+'',
+      incorrectas: this.incorrectCount+'',
+      tiempo: this.elapsedTime+''
+    };
+    console.log(estadistica)
+
+    this.conexionAzFunc.guardarEstadistica(estadistica)
+      .subscribe({
+        next: (response) => {
+          this.altaSuccess = true;
+          this.altaError=true;
+          this.altaMessage = response.message;
+          this.submitted=false;
+        },
+        error: (error) => {
+          this.altaError=false;
+          this.altaSuccess=false;
+          console.error('Error al guardas los datos: ', error);
+          this.altaMessage = 'Ocurrión un error mientras se guardaban los cambios, intente de nuevo.';
+        }
+      });
+
   }
 }
