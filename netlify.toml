@@ -12,3 +12,48 @@
   from = "/registro"
   to = "/"
   status = 200
+
+[[redirects]]
+  from = "/recuperarContrasena"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/inicioEspecialista"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/inicioPaciente"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/inicioAdmin"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/modificarDatos"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/validarPacientes"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/validarEspecialistas"
+  to = "/"
+  status = 200
+
+  [[redirects]]
+  from = "/pacientesAsignados"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/actividadesAsignadas"
+  to = "/"
+  status = 200
