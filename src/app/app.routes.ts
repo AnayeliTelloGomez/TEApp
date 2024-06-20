@@ -8,11 +8,13 @@ import { DesplieguePacientesComponent } from './components/despliegue-pacientes/
 import { DespliegueEspecialistasComponent } from './components/despliegue-especialistas/despliegue-especialistas.component';
 import { BienvenidaPacienteComponent } from './components/bienvenida-paciente/bienvenida-paciente.component';
 import { BienvnidaEspecialistaComponent } from './components/bienvnida-especialista/bienvnida-especialista.component';
+import { BienvendaAdminComponent } from './components/bienvenda-admin/bienvenda-admin.component';
 import { SolicitudRecuperacionContrasenaComponent } from './components/solicitud-recuperacion-contrasena/solicitud-recuperacion-contrasena.component';
 
-//actividades
+//guardias
 import { authEspecialista } from './guards/authEspecialista.guard';
 import { authGuard } from './guards/auth.guard'; 
+import { authAdmin } from './guards/authAdmin.guard';
 
 
 //actividades
@@ -49,10 +51,12 @@ export const routes: Routes = [
     {path: 'recuperarContrasena', component:SolicitudRecuperacionContrasenaComponent},
     {path: 'inicioEspecialista', component: BienvnidaEspecialistaComponent, canMatch: [authEspecialista]},
     {path: 'inicioPaciente', component: BienvenidaPacienteComponent, canMatch: [authGuard]},
+    {path: 'inicioAdmin', component: BienvendaAdminComponent, canMatch: [authAdmin]},
     {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authEspecialista]},
     {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authGuard]},
+    {path: 'modificarDatos', component: ModificarDatosComponent, canMatch: [authAdmin]},
     {path: 'validarPacientes', component: DesplieguePacientesComponent, canMatch: [authEspecialista]},
-    {path: 'validarEspecialistas', component: DespliegueEspecialistasComponent},
+    {path: 'validarEspecialistas', component: DespliegueEspecialistasComponent, canMatch: [authAdmin]},
 
     {path: 'pacientesAsignados', component: PacientesAsignadosComponent, canMatch: [authEspecialista]},
     {path: 'actividadesAsignadas', component: DespliegueActividadesComponent, canMatch: [authGuard]},
