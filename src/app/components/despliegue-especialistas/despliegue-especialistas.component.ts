@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { conexionAzFuncService } from '../../services/conexionAzFunc.service';
-import { HeaderComponent } from '../header/header.component';
+import { HPacienteComponent } from '../h-paciente/h-paciente.component';
+import { MenuuAdminComponent } from '../menuu-admin/menuu-admin.component';
 
 @Component({
   selector: 'app-despliegue-especialistas',
   standalone: true,
-  imports: [HeaderComponent, CommonModule],
+  imports: [HPacienteComponent, CommonModule,MenuuAdminComponent],
   templateUrl: './despliegue-especialistas.component.html',
   styleUrl: './despliegue-especialistas.component.css'
 })
