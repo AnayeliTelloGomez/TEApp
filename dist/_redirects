@@ -1,1 +1,4 @@
-
+[[redirects]]
+  from = "/inicioSesion"
+  to = "/"
+  status = 200
