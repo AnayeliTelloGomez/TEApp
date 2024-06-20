@@ -2,3 +2,13 @@
   from = "/inicioSesion"
   to = "/"
   status = 200
+
+[[redirects]]
+  from = "/inicioSesionAdmin"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/registro"
+  to = "/"
+  status = 200
