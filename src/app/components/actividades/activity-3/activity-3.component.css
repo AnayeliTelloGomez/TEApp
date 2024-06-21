@@ -40,6 +40,7 @@ html, body {
     box-shadow: 
     0px 3px 0 5px rgb(177, 176, 176); /* Sombra en la parte inferior *//* Sombra en la parte derecha */
     transition: transform 0.3s ease 0s;
+    border-radius: 10px;
   }
 
   .image-button:hover {

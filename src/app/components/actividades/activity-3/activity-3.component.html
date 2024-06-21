@@ -17,14 +17,18 @@
 <div>
   <mat-grid-list cols="2" rowHeight="600px">
     <mat-grid-tile colspan="1">
-      <button mat-raised-button class="image-button" (click)="onButtonClick(currentImages[0])">
+      <div class="image-button">
+      <button mat-raised-button class="" (click)="onButtonClick(currentImages[0])">
         <img [src]="getImagePath(currentImages[0])" alt="Imagen Correcta">
       </button>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
-      <button mat-raised-button class="image-button" (click)="onButtonClick(currentImages[1])">
+      <div class="image-button">
+      <button mat-raised-button class="" (click)="onButtonClick(currentImages[1])">
         <img [src]="getImagePath(currentImages[1])" alt="Imagen Incorrecta">
       </button>
+    </div>
     </mat-grid-tile>
   </mat-grid-list>
   <h3>{{ currentRepetition }} de {{ repetitions }}</h3>
