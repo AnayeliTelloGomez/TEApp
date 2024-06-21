@@ -55,8 +55,8 @@ p {
     
   
     .center {
-      width: 600px; /* Ancho automático para ocupar todo el ancho disponible */
-      height: 40px; /* Ajusta la altura según sea necesario */
+      width: 700px; /* Ancho automático para ocupar todo el ancho disponible */
+      height: 60px; /* Ajusta la altura según sea necesario */
       background-color: #57c95b; /* Color verde */
       border: none; /* Quita el borde */
       border-radius: 20px; /* Hace que el botón sea ovalado */
@@ -66,7 +66,7 @@ p {
       display: flex; /* Usa flexbox para centrar horizontalmente */
       align-items: center; /* Centra verticalmente el contenido */
       justify-content: center; /* Centra horizontalmente el contenido */
-      font-size: 16px; /* Tamaño de la fuente */
+      font-size: 20px; /* Tamaño de la fuente */
       cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
       outline: none; /* Quita el contorno al hacer clic en el botón */
       padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
@@ -74,7 +74,6 @@ p {
       margin-top: 30px;
       margin-bottom: 10px;
       font-family: Helvetica, sans-serif; /* Tipo de letra */
-      font-weight: bold;
       box-shadow: 
       0px 2px 0px 4px #2faf35; 
       transition: transform 0.3s ease 0s;
@@ -148,6 +147,7 @@ p {
       padding: 0 10px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
       margin: 0 auto; /* Centra el botón horizontalmente */
       margin-top: 20px;
+      font-size: 20px;
     }
 
     .container3 {
@@ -169,6 +169,7 @@ p {
       padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
       margin: 0 auto; /* Centra el botón horizontalmente */
       margin-top: 10px;
+      font-size: 20px;
     }
 
     .historia-imagen {
@@ -198,13 +199,13 @@ p {
       padding: 10px 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
       margin: 0 auto; /* Centra el botón horizontalmente */
       margin-bottom: 40px;
-      margin-top: 40px;
+      margin-top: -550px;
     }
     
 
     .center-back {
-      width: 600px; /* Ancho automático para ocupar todo el ancho disponible */
-      height: 40px; /* Ajusta la altura según sea necesario */
+      width: 700px; /* Ancho automático para ocupar todo el ancho disponible */
+      height: 60px; /* Ajusta la altura según sea necesario */
       background-color: #c95757; /* Color verde */
       border: none; /* Quita el borde */
       border-radius: 20px; /* Hace que el botón sea ovalado */
@@ -214,7 +215,7 @@ p {
       display: flex; /* Usa flexbox para centrar horizontalmente */
       align-items: center; /* Centra verticalmente el contenido */
       justify-content: center; /* Centra horizontalmente el contenido */
-      font-size: 16px; /* Tamaño de la fuente */
+      font-size: 20px; /* Tamaño de la fuente */
       cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
       outline: none; /* Quita el contorno al hacer clic en el botón */
       padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
@@ -222,7 +223,6 @@ p {
       margin-top: 30px;
       margin-bottom: 10px;
       font-family: Helvetica, sans-serif; /* Tipo de letra */
-      font-weight: bold;
       box-shadow: 
       0px 2px 0px 4px #af2f2f; 
       transition: transform 0.3s ease 0s;
