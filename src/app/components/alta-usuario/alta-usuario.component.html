@@ -57,18 +57,28 @@
                                         <input type="email" class="form-control" id="correo" [(ngModel)]="correo"
                                             placeholder="usuario@correo.com" required name="correo">
                                         <div class="invalid-feedback">
-                                            El correo electrónico es un dato obligatorio.
+                                            El correo electrónico es un dato obligatorio y debe ser un correo valido.
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <label for="contrasena" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="contrasena" [(ngModel)]="contrasena"
+                                    <!--<label for="contrasena" class="form-label">Contraseña</label>
+                                    <input  type="password" class="form-control" id="contrasena"minlength="8" ng-pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#\$%\^&\*]).{8,}$/" [(ngModel)]="contrasena " ng-model="contrasena"
                                         required name="contrasena">
                                     <div class="invalid-feedback">
                                         La Contraseña es un dato obligatorio.
                                     </div>
+                                    <div class="invalid-feedback">
+                                        La Contraseña es un dato obligatorio.
+                                    </div>-->
+
+                                    <label for="contrasena" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="contrasena" minlength="8" [(ngModel)]="contrasena" required name="contrasena" (input)="validatePassword()">
+                                    <div *ngIf="!passwordInvalid" class="invalid-feedback">
+                                    La contraseña debe contener 8 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial.
+                                    </div>
+                                    
                                 </div>
 
                                 <div class="col-sm-6">
