@@ -10,45 +10,47 @@ html, body {
     /*background-color: rgba(239, 244, 245, 0.812);*/
     height: 100%;  
     overflow-y: auto;
-    background-image: url('../../../../assets/img/background.jpg');
+        /*background-image: url('../../../../assets/img/background.jpg');*/
+    background-color: #7fbddb;
     background-size: cover; /* para cubrir todo el área del fondo */
     background-position: center; /* para centrar la imagen */
   }
   
   
   
+  /* Contenedor del carrusel */
   .photo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-      width: 400px;
-      max-height: 600px; /* Asume que el contenedor toma toda la altura de la ventana */
-      max-width: 600px;
-      background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
-      padding: 10px;
-      box-shadow: 
-      0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
-      border-radius: 10px; /* Bordes redondeados */
-      margin: 10px; /* Espacio alrededor del contenedor */
-      box-sizing: border-box;
-      position:relative;
-      overflow: hidden;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%; /* 70% del ancho de la página */
+    max-width: 70vw; /* Asegura que no exceda el 70% del viewport */
+    height: auto;
+    max-height: 100vh; /* No más alto que la ventana de visualización */
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0px 3px 0 5px rgb(177, 176, 176);
+    border-radius: 10px;
+    margin: 10px auto; /* Centra el contenedor horizontalmente */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
     
-    .carousel-item img{
-      height: auto;
-      width: auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
+  /* Imágenes del carrusel */
+  .carousel-item img {
+    width: 100%; /* Mantén el ancho constante */
+    height: auto; /* La altura se ajusta proporcionalmente */
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio manteniendo su aspecto */
+  }
 
-    .carousel{
-        height: auto;
-        width: auto;
-        max-height: 100%;
-        max-width: 70%;
-      }
+  /* Ajustes para el carrusel */
+  .carousel {
+    width: 100%;
+    max-width: 100%; /* Asegura que no exceda el contenedor padre */
+    height: auto;
+    max-height: 100%;
+  }
+
   
   
     .reduce-top-margin {
@@ -57,28 +59,30 @@ html, body {
     
   
     .center {
-      width: 600px; /* Ancho automático para ocupar todo el ancho disponible */
-      height: 40px; /* Ajusta la altura según sea necesario */
-      background-color: #57c95b; /* Color verde */
-      border: none; /* Quita el borde */
-      border-radius: 20px; /* Hace que el botón sea ovalado */
+      width: 90%; /* Ancho fijo */
+      height: 100%; /* Altura fija */
+      max-width: 1000px;
+      max-height: 80px;
+      background-color: #57c95b; /* Color de fondo */
+      border: none; /* Sin borde */
+      border-radius: 20px; /* Bordes redondeados */
       color: white; /* Color del texto */
-      text-align: center; /* Centra el texto horizontalmente */
-      text-decoration: none; /* Quita la subrayado del texto */
-      display: flex; /* Usa flexbox para centrar horizontalmente */
-      align-items: center; /* Centra verticalmente el contenido */
-      justify-content: center; /* Centra horizontalmente el contenido */
-      font-size: 16px; /* Tamaño de la fuente */
+      text-align: center; /* Texto centrado horizontalmente */
+      text-decoration: none; /* Sin subrayado */
+      display: flex; /* Flexbox para centrar */
+      align-items: center; /* Centrado vertical */
+      justify-content: center; /* Centrado horizontal */
+      font-size: 1.2em; /* Tamaño de la fuente */
       cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-      outline: none; /* Quita el contorno al hacer clic en el botón */
-      padding: 0 20px; /* Añade relleno horizontal para que el texto no esté demasiado pegado a los bordes */
-      margin: 0 auto; /* Centra el botón horizontalmente */
+      outline: none; /* Sin contorno al hacer clic */
+      padding: 0.5em; /* Padding */
+      margin: 0 auto; /* Centra horizontalmente */
+      margin-top: 30px;
+      margin-bottom: 10px;
       font-family: Helvetica, sans-serif; /* Tipo de letra */
-      font-weight: bold;
-      box-shadow: 
-      0px 2px 0px 4px #2faf35; 
+      box-shadow: 0px 2px 0px 4px #2faf35; 
       transition: transform 0.3s ease 0s;
-    }
+  }
     
     
     .center:hover {
@@ -113,3 +117,68 @@ html, body {
       font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       color: rgb(0, 0, 0);
     }
+
+    .centrado{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Media queries para ajustar el contenedor en pantallas más pequeñas */
+
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 1200px) {
+  .photo-container {
+      width: 80%; /* Incrementa a 80% para pantallas medianas */
+  }
+}
+
+
+@media (max-width: 720px) {
+
+
+  .center{
+    font-size: 1em; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+    padding: 0.5em; /* Ajustar el padding */
+    max-width: 60%; /* Más flexibilidad en el ancho */
+    height: 100%;
+  }
+
+  .photo-container {
+    width: 90%; /* Incrementa a 90% para pantallas pequeñas */
+}
+
+
+}
+
+@media (max-width: 400px) {
+
+  .center {
+    font-size: 0.9em; /* Reducir aún más el tamaño de fuente */
+    padding: 0.5em; /* Más ajuste en el padding */
+    max-width: 60%; /* Permitir que el contenedor ocupe todo el ancho disponible */
+    height: 100%;
+}
+
+.photo-container {
+  width: 100%; /* Usar todo el ancho disponible en pantallas muy pequeñas */
+}
+
+
+}

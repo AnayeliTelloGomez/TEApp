@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit, HostListener  } from '@angular/core';
 
 import { conexionAzFuncService } from '../../../services/conexionAzFunc.service';
 import {MatIconModule} from '@angular/material/icon';
@@ -21,11 +21,13 @@ import { RouterLink, RouterLinkActive, RouterOutlet , ActivatedRoute} from '@ang
   ],templateUrl: './activity-1.component.html',
   styleUrl: './activity-1.component.css'
 })
-export class Activity1Component {
+export class Activity1Component implements OnInit {
   
   emotion: string = '';
   videoId: string = '';
   idact: number=1;
+  responsiveWidth: number = 1;
+  responsiveHeight: number=1;
 
   correctCount: number = 0;
   incorrectCount: number = 0;
@@ -45,6 +47,7 @@ export class Activity1Component {
   altaError: boolean =true;
   submitted: boolean= false;
   altaMessage: string='';
+  emocion_tit: string = '';
 
 
 
@@ -65,6 +68,7 @@ export class Activity1Component {
     this.correctCount = this.correctCount;
     this.incorrectCount = this.incorrectCount;
     this.elapsedTime = this.elapsedTime;
+    this.updateVideoSize();
 
     this.route.paramMap.subscribe(params => {
       const emotion = params.get('emotion');
@@ -74,6 +78,22 @@ export class Activity1Component {
         this.idact = Number(params.get('idact')) || 1;
       }
     });
+
+    if (this.emotion == 'enojo'){
+      this.emocion_tit = 'Enojo';
+    }
+    else if(this.emotion == 'alegria'){
+      this.emocion_tit = 'Alegria';
+    }
+    else if(this.emotion == 'miedo'){
+      this.emocion_tit = 'Miedo';
+    }
+    else if(this.emotion == 'asco'){
+      this.emocion_tit = 'Asco';
+    }
+    else{
+      this.emocion_tit = 'Tristeza';
+    }
   }
 
   finalizar(){
@@ -106,6 +126,20 @@ export class Activity1Component {
         }
       });
 
+  }
+
+
+
+
+  @HostListener('window:resize')
+  onResize() {
+    this.updateVideoSize();
+  }
+
+  updateVideoSize() {
+    // Calcula el ancho y alto basado en la ventana de visualización
+    this.responsiveWidth = window.innerWidth * 0.6; // 80% del ancho de la ventana
+    this.responsiveHeight = this.responsiveWidth * 9 / 16; // Relación de aspecto 16:9
   }
 
 }

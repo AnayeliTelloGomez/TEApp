@@ -8,11 +8,13 @@
 </button>
 
 <!-- Título -->
-<h1 class="titulo">{{ emotion }}</h1>
+<h1 class="titulo">{{ emocion_tit }}</h1>
+<br>
+<br>
+<br>
 
 <!-- Estructura de Angular con Bootstrap Carousel -->
-<mat-grid-list cols="1" rowHeight="600px">
-  <mat-grid-tile colspan="1">
+  <div class="centrado">
     <div class="photo-container">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -40,12 +42,16 @@
         </button>
       </div>
     </div>
-  </mat-grid-tile>
+  </div>
 
-  <mat-grid-tile colspan="1" class="reduce-top-margin">
+    <br>
+    <br>
+
     <button class="center" (click)="guardarEst()" routerLink="/actividadesAsignadas">Siguiente</button>
-  </mat-grid-tile>
-</mat-grid-list>
+    <br>
+    <br>
+    <br>
+
 
 <!-- Modal -->
 <div class="modal fade" id="Backdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

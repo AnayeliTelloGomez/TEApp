@@ -6,24 +6,24 @@
     <mat-icon>help</mat-icon>
   </button>
   
-  <h1 class = 'titulo'>{{ emotion }}</h1>
+  <h1 class = 'titulo'>{{ emocion_tit }}</h1>
   
-  <mat-grid-list cols="1" rowHeight="600px">
-    <mat-grid-tile colspan="1">
+    <div class="centrado">
       <div class="video-container" *ngIf="videoId">
         <youtube-player 
           [videoId]="videoId"
           suggestedQuality="highres"
-          [width]="500"
-          [height]="300">
+          [width]="responsiveWidth"
+          [height]="responsiveHeight">
         </youtube-player>
       </div>
-    </mat-grid-tile>
-  
-    <mat-grid-tile colspan="1" class="reduce-top-margin">
-      <button class="center" (click)="guardarEst()" routerLink="/actividadesAsignadas">Finalizar</button>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+      
+
+  <button class="center" (click)="guardarEst()" routerLink="/actividadesAsignadas">Finalizar</button>
+
+  <br>
+  <br>
   
   <!-- Modal -->
   <div class="modal fade" id="Backdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

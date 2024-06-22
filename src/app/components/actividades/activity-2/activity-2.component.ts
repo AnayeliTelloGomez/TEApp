@@ -49,6 +49,7 @@ export class Activity2Component implements OnInit{
   altaError: boolean =true;
   submitted: boolean= false;
   altaMessage: string='';
+  emocion_tit: string = '';
 
 
 
@@ -64,6 +65,22 @@ export class Activity2Component implements OnInit{
         this.idact = Number(params.get('idact')) || 1;
       }
     });
+
+    if (this.emotion == 'enojo'){
+      this.emocion_tit = 'Enojo';
+    }
+    else if(this.emotion == 'alegria'){
+      this.emocion_tit = 'Alegria';
+    }
+    else if(this.emotion == 'miedo'){
+      this.emocion_tit = 'Miedo';
+    }
+    else if(this.emotion == 'asco'){
+      this.emocion_tit = 'Asco';
+    }
+    else{
+      this.emocion_tit = 'Tristeza';
+    }
   }
 
   loadImages(emotion: string) {
