@@ -3,6 +3,7 @@ import { Component, OnInit, NgModule} from '@angular/core';
 import { conexionAzFuncService } from '../../services/conexionAzFunc.service';
 //importa la interfaz para manejar el objt paciente
 import { Usuario } from '../../models/usuario.interface';
+import { Error } from '../../models/error.interface';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
@@ -15,7 +16,10 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './alta-usuario.component.css',
   providers: [conexionAzFuncService]
 })
+
+
 export class AltaUsuarioComponent implements OnInit{
+
   correo: string='';
   contrasena: string='';
   nombres: string='';
@@ -36,6 +40,7 @@ export class AltaUsuarioComponent implements OnInit{
   setTheme(theme: string) {
     document.documentElement.setAttribute('data-bs-theme', theme);
   }
+  
 
   register(){
     this.submitted=true;
@@ -66,7 +71,7 @@ export class AltaUsuarioComponent implements OnInit{
           this.altaError=false;
           this.altaSuccess=false;
           console.error('Error al registrar paciente: ', error);
-          this.altaMessage = 'Ocurrión un error mientras se registraba el usuario, intente de nuevo.';
+          this.altaMessage = error.error.mensaje;//'Ocurrión un error mientras se registraba el usuario, intente de nuevo.';
         }
       });
   }

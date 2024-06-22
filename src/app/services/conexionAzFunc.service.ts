@@ -11,9 +11,9 @@ export class conexionAzFuncService{
 
   constructor(private http: HttpClient){ }
 
-  altaPaciente(requestBody: any) :Observable<string>{
+  altaPaciente(requestBody: any){
     console.log(requestBody)
-    return this.http.post(`${this.apiURL}/AltaPaciente`,requestBody, { responseType: 'text' })
+    return this.http.post<any>(`${this.apiURL}/AltaPaciente`,requestBody)
   }
 
   inicioSesion(requestBody: any){
