@@ -9,14 +9,23 @@
 <br>
 <br>
 
+
+<div *ngIf="mostrarFin" class="contenedor2">
+  <div class="container">
+    <p>Fin de la historia.</p>
+  </div>
+  <button (click)="terminarHistoria()" class="center">Terminar Historia</button>
+</div>
+
+
 <!-- Grid para las historias y opciones -->
-<mat-grid-list cols="1" rowHeight="1000px">
+<mat-grid-list cols="1" rowHeight="1600px">
   <mat-grid-tile colspan="1">
-    <div *ngIf="mostrarHistoria" class="contendor">
+    <div *ngIf="mostrarHistoria && !mostrarFin" class="contendor" >
       <div class="container-img" >
-        <img [src]="imagenActual" alt="Imagen de la historia" class="historia-imagen" width="400" height="300"> <!-- Nueva imagen -->
+        <img [src]="imagenActual" alt="Imagen de la historia" class="historia-imagen" > <!-- Nueva imagen -->
       </div>
-      <div class="container">
+      <div class="container flex">
         <p [innerHTML]="historiaActual"></p>
       </div>
       <br>
@@ -30,11 +39,11 @@
       </div>
       <div *ngIf="mostrarError" class="contenedor">
         <button (click)="regresar()" class="center-back">Regresar</button>
-        <div class="container2">
+        <div class="container">
           <p>Esa no es la mejor opción.</p>
         </div>
         <br>
-        <div class="container3">
+        <div class="container">
           <p>{{ reflexionActual }}</p> <!-- Mostrar la reflexión aquí -->
         </div>
       </div>
@@ -43,12 +52,6 @@
 </mat-grid-list>
 
 
-<div *ngIf="mostrarFin" class="contenedor">
-  <div class="container">
-    <p>Fin de la historia.</p>
-  </div>
-  <button (click)="terminarHistoria()" class="center">Terminar Historia</button>
-</div>
 
 <!-- Modal para confirmar cierre -->
 <div class="modal fade" id="Backdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
