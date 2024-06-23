@@ -23,7 +23,7 @@
                     <div class="card h-100">
                         <img [src]="imgCard(actividad.act)" class="card-img-top" alt="..." >
                         <div class="card-body">
-                            <h5 class="card-title">{{actividad.act}} {{actividad.emocion}}</h5>
+                            <h5 class="card-title">{{actividadNum(actividad.act)}} {{actividad.emocion}}</h5>
                             <p class="card-text">{{descripcionAct(actividad.act)}}</p>
                             <a [routerLink]="ruta(actividad.act, actividad.emocion, actividad.reactivos, actividad.idact)" class="btn btn-primary">Jugar</a>
                         </div>

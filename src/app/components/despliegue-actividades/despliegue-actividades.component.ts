@@ -34,6 +34,19 @@ export class DespliegueActividadesComponent implements OnInit {
     });
   }
 
+  actividadNum(act:string){
+    if(act==='activity1')
+      return 'Actividad 1';
+    else if(act==='activity2')
+          return 'Actividad 2';
+        else if(act==='activity3')
+              return 'Actividad 3';
+            else if(act==='activity4')
+                  return 'Actividad 4';
+                else
+                return 'Actividad 5';     
+  }
+
   descripcionAct(act:string){
     if(act==='activity1')
       return 'descripcion actividad 1';
