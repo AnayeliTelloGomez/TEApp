@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HPacienteComponent } from '../../h-paciente/h-paciente.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { LegendPosition } from '@swimlane/ngx-charts';
 import { RouterLink,RouterOutlet, RouterLinkActive,Router, ActivatedRoute} from '@angular/router';
 import { conexionAzFuncService } from '../../../services/conexionAzFunc.service';
 
@@ -47,13 +48,14 @@ export class EstadisticaActividadComponent implements OnInit {
   tiempoData: ChartData[] = [];
   totalData: TotalData[] = [];
 
-  view: [number, number] = [700, 400];
+  view: [number, number] = [0, 0];
 
   showXAxis = true;
   showYAxis = true;
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
+  legendPosition: LegendPosition = LegendPosition.Below;
   xAxisLabel = 'Actividad';
   showYAxisLabel = true;
   yAxisLabel = 'Respuestas';

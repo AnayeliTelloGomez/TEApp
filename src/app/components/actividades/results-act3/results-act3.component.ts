@@ -101,7 +101,7 @@ export class ResultsAct3Component {
   showXAxisLabel: boolean = true;
   xAxisLabel: string = 'Actividad';
   showYAxisLabel: boolean = true;
-  yAxisLabel: string = 'Numero de Reactivos';
+  yAxisLabel: string = 'Número de Reactivos';
   legendTitle: string = 'Respuestas';
 
 

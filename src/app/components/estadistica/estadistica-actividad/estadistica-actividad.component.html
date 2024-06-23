@@ -1,9 +1,8 @@
 <app-h-paciente></app-h-paciente>
 
-<div  class="centrado">
-<div>
-  <h2>Gráfica de Respuestas Correctas</h2>
-  <div class="contenedor">
+<div class="grid-container">
+  <div class="grid-item">
+    <h2>Gráfica de Respuestas Correctas</h2>
     <ngx-charts-line-chart
       [view]="view"
       scheme="cool"
@@ -12,6 +11,8 @@
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
       [legend]="showLegend"
+      [legendPosition]="legendPosition"
+      [legendTitle]="'Respuestas'"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"
       [xAxisLabel]="xAxisLabel"
@@ -19,8 +20,8 @@
     </ngx-charts-line-chart>
   </div>
 
-  <h2>Gráfica de Respuestas Incorrectas</h2>
-  <div class="contenedor">
+  <div class="grid-item">
+    <h2>Gráfica de Respuestas Incorrectas</h2>
     <ngx-charts-line-chart
       [view]="view"
       scheme="cool"
@@ -29,6 +30,8 @@
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
       [legend]="showLegend"
+      [legendPosition]="legendPosition"
+      [legendTitle]="'Respuestas'"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"
       [xAxisLabel]="xAxisLabel"
@@ -36,8 +39,8 @@
     </ngx-charts-line-chart>
   </div>
 
-  <h2>Gráfica de Tiempo</h2>
-  <div class="contenedor">
+  <div class="grid-item">
+    <h2>Gráfica de Tiempo</h2>
     <ngx-charts-line-chart
       [view]="view"
       scheme="cool"
@@ -46,6 +49,8 @@
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
       [legend]="showLegend"
+      [legendPosition]="legendPosition"
+      [legendTitle]="'Tiempo'"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"
       [xAxisLabel]="xAxisLabel"
@@ -53,8 +58,8 @@
     </ngx-charts-line-chart>
   </div>
 
-  <h2>Gráfica Total de Respuestas</h2>
-  <div class="contenedor">
+  <div class="grid-item">
+    <h2>Gráfica Total de Respuestas</h2>
     <ngx-charts-bar-vertical
       [view]="view"
       scheme="cool"
@@ -63,11 +68,12 @@
       [xAxis]="showXAxis"
       [yAxis]="showYAxis"
       [legend]="showLegend"
+      [legendPosition]="legendPosition"
+      [legendTitle]="'Respuestas'"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"
       [xAxisLabel]="xAxisLabel"
       [yAxisLabel]="yAxisLabel">
     </ngx-charts-bar-vertical>
   </div>
-</div>
 </div>

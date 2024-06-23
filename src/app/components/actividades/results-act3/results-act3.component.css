@@ -10,7 +10,8 @@ html, body {
     /*background-color: rgba(239, 244, 245, 0.812);*/
     height: 100%;  
     overflow-y: auto;
-    background-image: url('../../../../assets/img/background.jpg');
+            /*background-image: url('../../../../assets/img/background.jpg');*/
+    background-color: #7fbddb;
     background-size: cover; /* para cubrir todo el área del fondo */
     background-position: center; /* para centrar la imagen */
   }
