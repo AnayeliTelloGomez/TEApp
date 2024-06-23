@@ -32,8 +32,6 @@ export class AltaUsuarioComponent implements OnInit{
   submitted: boolean= false;
   altaMessage: string='';
 
-  pass= new FormControl('',Validators.required);
-
   //instancia servicio
   constructor (private conexionAzFuncService: conexionAzFuncService){ }
 
@@ -52,6 +50,7 @@ export class AltaUsuarioComponent implements OnInit{
     const hasLower = /[a-z]/.test(password);
     const hasNumber = /\d/.test(password);
     const hasSpecial = /[^\w]/.test(password);
+    console.log( !hasUpper || !hasLower || !hasNumber || !hasSpecial)
     return this.passwordInvalid = !hasUpper || !hasLower || !hasNumber || !hasSpecial;
   }
 
@@ -66,6 +65,7 @@ export class AltaUsuarioComponent implements OnInit{
       tipo: this.tipo
     };
     const requestBody = { paciente: paciente };
+    if(!this.passwordInvalid)
     this.conexionAzFuncService.altaPaciente(requestBody)
       .subscribe({
         next: (response) => {

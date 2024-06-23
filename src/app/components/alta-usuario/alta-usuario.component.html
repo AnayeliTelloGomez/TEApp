@@ -75,7 +75,7 @@
 
                                     <label for="contrasena" class="form-label">Contraseña</label>
                                     <input type="password" class="form-control" id="contrasena" minlength="8" [(ngModel)]="contrasena" required name="contrasena" (input)="validatePassword()">
-                                    <div *ngIf="!passwordInvalid" class="invalid-feedback">
+                                    <div *ngIf="passwordInvalid" class="invalid-feedback">
                                     La contraseña debe contener 8 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial.
                                     </div>
                                     

@@ -71,7 +71,7 @@ export class ModificarDatosComponent implements OnInit{
           this.submitted=false;
         },
         error: (error) => {
-          this.altaError=false;
+          //this.altaError=false;
           this.altaSuccess=false;
           console.error('Error al registrar paciente: ', error);
           this.altaMessage = 'Ocurrión un error mientras se guardaban los cambios, intente de nuevo.';
