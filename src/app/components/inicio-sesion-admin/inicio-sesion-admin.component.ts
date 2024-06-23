@@ -31,6 +31,7 @@ export class InicioSesionAdminComponent implements OnInit{
   correo: string='';
   contrasena: string='';
   tipo: string='4';
+  submitted:boolean = false;
   
   //controlar el mennsaje de credenciales incorrectas
   inicioDenied: boolean=true;
@@ -44,6 +45,7 @@ export class InicioSesionAdminComponent implements OnInit{
   constructor (private conexionAzFunc: conexionAzFuncService, private router: Router) { }
 
   verificar(){
+    this.submitted=true;
     //creacion de obj a enviar
     const usuarioIncio: usuarioInicio = {
       correo: this.correo,
@@ -65,10 +67,11 @@ export class InicioSesionAdminComponent implements OnInit{
         this.router.navigate(['/inicioAdmin'])  
       },
       error: (error)=>{
-        this.inicioDenied=false;
+        //this.inicioDenied=false;
         localStorage.setItem('inicioAdmin', 'false');
-        console.error('Credenciales erroneas: ',error.error.message);
         this.message='Correo o contraseña incorrectos.'
+        if(error.error.mensaje == 'Credenciales erroneas.')
+          this.inicioDenied=false;
       }
     })
   }
