@@ -36,9 +36,11 @@
         </form>
 
         <form *ngIf="envioSuccess" (ngSubmit)="validarCodigo()">
-            <div class="py-2 form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="" required [(ngModel)]="codigo" name="codigo">
-                <label for="floatingInput">Código de verificación</label>
+            <div class="row py-2">
+                <div class="form-floating col-lg-12 col-md-12 col-sm-12">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="" required [(ngModel)]="codigo" name="codigo">
+                    <label for="floatingInput">Código de verificación</label>
+                </div>
             </div>
             <div class="py-2 form-floating">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="" required [(ngModel)]="contrasena" name="contrasena">

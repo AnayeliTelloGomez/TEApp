@@ -33,8 +33,8 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let paciente of pacientes">
-                            <td >{{ paciente.correo }}</td>
-                            <td>{{ paciente.nombres }} {{paciente.paterno}} {{paciente.materno}}</td>                           
+                            <td class="text-center">{{ paciente.correo }}</td>
+                            <td class="text-center">{{ paciente.nombres }} {{paciente.paterno}} {{paciente.materno}}</td>                           
                             <td class="text-center">
                                 <button class="btn btn-primary" type="submit" [routerLink]="['/emocionEstadisticaEspecialista',paciente.idpaciente]">Ver</button>
                             </td>
