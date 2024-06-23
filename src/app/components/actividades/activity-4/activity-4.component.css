@@ -228,3 +228,28 @@ html, body {
       color: rgb(0, 0, 0);
       line-height: 1.0;
     }
+
+
+    .result-image {
+      max-width: 100px; /* Define un tamaño máximo para las imágenes */
+      max-height: 100px; /* Define un tamaño máximo para las imágenes */
+      margin: 5px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      object-fit: contain; /* Asegura que la imagen se ajuste al contenedor manteniendo la proporción */
+    }
+    
+    .result-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Centra las imágenes en el modal */
+    }
+    
+    .modal-lg {
+      max-width: 80%; /* Aumenta el tamaño del modal para que las imágenes tengan más espacio */
+    }
+
+    .blue-modal{
+      background-color: #95e8f9;
+    }
+    

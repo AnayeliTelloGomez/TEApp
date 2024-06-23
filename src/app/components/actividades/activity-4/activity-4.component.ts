@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 
 import { RouterLink, RouterLinkActive, RouterOutlet , ActivatedRoute, Router} from '@angular/router';
 
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-activity-4',
   standalone: true,
@@ -30,6 +32,9 @@ export class Activity4Component {
   scene: string[] = []; 
   correct: string[] = [];
   incorrect: string[] = [];
+
+  correctAnswers: string[] = [];
+  incorrectAnswers: string[] = [];
 
   emotion: string = '';  
   imagesPath: string = ''; 
@@ -71,12 +76,14 @@ export class Activity4Component {
         this.imageCount = +countParam;
         this.imagesPath = `../../../../assets/img/Emociones/${this.emotion}/Act4/`;
         this.generateRandomImages();
+        this.generateCorrectAnswers();
       } else {
         // Manejar el caso donde no se obtienen los parámetros
         this.emotion = 'default';
         this.imageCount = 1;
         this.imagesPath = `../../../../assets/img/Emociones/default/Act4/`;
         this.generateRandomImages();
+        this.generateCorrectAnswers();
       }
     });
 
@@ -127,18 +134,29 @@ export class Activity4Component {
     }
   }
 
-  checkAnswers(): void {
+  // Método para generar las respuestas correctas e incorrectas basadas en las imágenes usadas en la actividad
+  generateCorrectAnswers(): void {
+    this.correctAnswers = this.scene.filter(image => image.startsWith('correct'));
+    this.incorrectAnswers = this.scene.filter(image => image.startsWith('incorrect'));
+  }
+
+  // Método para mostrar el modal con las respuestas correctas
+  showResults(): void {
     this.endTime = Date.now();
+    const modal = new bootstrap.Modal(document.getElementById('ResultsModal'));
+    modal.show();
+  }
+
+  
+  navigateToResults(): void {
     const elapsedTime = (this.endTime - this.startTime) / 1000;
     let incorrectCount = 0;
     let correctCount = 0;
   
-    // Verificar si hay imágenes restantes en la lista de escena
     if (this.scene.length > 0) {
       incorrectCount += this.scene.length;
     }
   
-    // Verificar las respuestas incorrectas en la lista de correctas
     for (const item of this.correct) {
       if (item.startsWith('incorrect')) {
         incorrectCount++;
@@ -147,7 +165,6 @@ export class Activity4Component {
       }
     }
   
-    // Verificar las respuestas correctas en la lista de incorrectas
     for (const item of this.incorrect) {
       if (item.startsWith('correct')) {
         incorrectCount++;
@@ -156,11 +173,9 @@ export class Activity4Component {
       }
     }
   
-    // Navegar al componente de resultados con el número de respuestas incorrectas y correctas
-    this.router.navigate(['/resultados_act4',this.idact], {
+    this.router.navigate(['/resultados_act4', this.idact], {
       state: { incorrectCount, correctCount, elapsedTime }
     });
   }
-  
 
 }

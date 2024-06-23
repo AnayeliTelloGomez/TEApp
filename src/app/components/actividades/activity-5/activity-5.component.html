@@ -19,37 +19,43 @@
 
 
 <!-- Grid para las historias y opciones -->
-<mat-grid-list cols="1" rowHeight="1600px">
-  <mat-grid-tile colspan="1">
-    <div *ngIf="mostrarHistoria && !mostrarFin" class="contendor" >
-      <div class="container-img" >
-        <img [src]="imagenActual" alt="Imagen de la historia" class="historia-imagen" > <!-- Nueva imagen -->
+<div *ngIf="mostrarHistoria && !mostrarFin" class="contenedor-grid">
+  <div class="grid-img">
+    <img [src]="imagenActual" alt="Imagen de la historia" class="historia-imagen">
+  </div>
+  <div class="grid-text-buttons">
+    <div class="text-container">
+      <p [innerHTML]="historiaActual"></p>
+    </div>
+    <div *ngIf="mostrarOpciones" class="buttons-container">
+      <button *ngFor="let opcion of opciones[emocion][pasoActual]; let i = index"
+              (click)="elegirOpcion(opcion.correcta, i)" class="opcion-btn">
+        {{ opcion.texto }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para errores -->
+<!-- Modal para errores -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-red">
+
       </div>
-      <div class="container flex">
-        <p [innerHTML]="historiaActual"></p>
+      <div class="modal-body">
+        <p>Esa no es la mejor opción.</p>
+        <p>{{ reflexionActual }}</p>
       </div>
-      <br>
-      <div *ngIf="mostrarOpciones">
-        <button *ngFor="let opcion of opciones[emocion][pasoActual]; let i = index"
-                (click)="elegirOpcion(opcion.correcta, i)" class="center">
-          {{ opcion.texto }}
-        </button>
-        <br>
-        <br>
-      </div>
-      <div *ngIf="mostrarError" class="contenedor">
-        <button (click)="regresar()" class="center-back">Regresar</button>
-        <div class="container">
-          <p>Esa no es la mejor opción.</p>
-        </div>
-        <br>
-        <div class="container">
-          <p>{{ reflexionActual }}</p> <!-- Mostrar la reflexión aquí -->
-        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
       </div>
     </div>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
+
+
 
 
 

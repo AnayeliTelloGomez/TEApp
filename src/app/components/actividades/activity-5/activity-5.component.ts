@@ -9,6 +9,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+declare var bootstrap: any;
+
 
 @Component({
   selector: 'app-activity-5',
@@ -408,14 +410,20 @@ export class Activity5Component implements OnInit {
       }
     } else {
       this.reflexionActual = opcionElegida.reflexion || 'Reflexiona sobre por qué esta opción no es la mejor.';
-      this.mostrarError = true;
-      this.mostrarOpciones = false;
+      this.mostrarOpciones = true;
+      this.mostrarModal();
     }
   }
 
   regresar() {
     this.mostrarError = false;
     this.mostrarOpciones = true;
+  }
+
+
+  mostrarModal():void{
+      const modal = new bootstrap.Modal(document.getElementById('errorModal'));
+      modal.show();
   }
 
   terminarHistoria() {

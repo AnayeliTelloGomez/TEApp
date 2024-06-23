@@ -52,7 +52,6 @@
     </div>
   </mat-grid-list>
   
-  <button class="center" (click)="checkAnswers()">CHECAR</button>
   
   <div class="space"></div>
   
@@ -87,3 +86,42 @@
     </div>
   </div>
   
+
+
+
+<!-- Modal para mostrar las respuestas correctas e incorrectas -->
+<div class="modal fade" id="ResultsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="resultsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header blue-modal ">
+        <h5 class="modal-title" id="resultsModalLabel">Respuestas Correctas</h5>
+      </div>
+      <div class="modal-body ">
+        <h3>Con {{emotion}}</h3>
+        <div class="result-container">
+          <!-- Mostrar solo las imágenes correctas que fueron usadas en la actividad -->
+          <ng-container *ngFor="let item of correctAnswers">
+            <img [src]="imagesPath + item.toLowerCase() + '.jpg'" alt="{{item}}" class="result-image">
+          </ng-container>
+        </div>
+        <h3>Otra emoción</h3>
+        <div class="result-container">
+          <!-- Mostrar solo las imágenes incorrectas que fueron usadas en la actividad -->
+          <ng-container *ngFor="let item of incorrectAnswers">
+            <img [src]="imagesPath + item.toLowerCase() + '.jpg'" alt="{{item}}" class="result-image">
+          </ng-container>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary modal-green" data-bs-dismiss="modal" (click)="navigateToResults()">Ver Resultados</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Botón para checar las respuestas -->
+<button class="center" (click)="showResults()">CHECAR</button>
+
+<br>
+<br>
+<br>
