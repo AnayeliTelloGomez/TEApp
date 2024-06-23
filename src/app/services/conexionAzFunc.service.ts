@@ -12,17 +12,15 @@ export class conexionAzFuncService{
   constructor(private http: HttpClient){ }
 
   altaPaciente(requestBody: any){
-    console.log(requestBody)
     return this.http.post<any>(`${this.apiURL}/AltaPaciente`,requestBody)
   }
 
   inicioSesion(requestBody: any){
-    console.log(requestBody)
     return this.http.post<any>(`${this.apiURL}/inicioSesion`,requestBody);
   }
 
-  desplieguePacientes(){
-    return this.http.get<any>(`${this.apiURL}/desplieguePaciente`);
+  desplieguePacientes(correo:string){
+    return this.http.get<any>(`${this.apiURL}/desplieguePaciente?correo=${correo}`);
   }
 
   pacientesAsignados(correo: string){

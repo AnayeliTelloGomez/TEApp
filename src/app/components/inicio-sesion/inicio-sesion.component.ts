@@ -91,8 +91,8 @@ export class InicioSesionComponent implements OnInit{
           localStorage.setItem('inicio', 'false');
         else
           localStorage.setItem('inicioEsp', 'false');
-          console.error('Credenciales erroneas: ',error.error.message);
-          this.message='Correo o contraseña incorrectos.'
+          console.error('Error: ',error.error.message);
+          this.message=error.error.mensaje;///'Correo o contraseña incorrectos.'
       }
     })
   }

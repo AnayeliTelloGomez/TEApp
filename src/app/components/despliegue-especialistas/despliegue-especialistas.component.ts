@@ -47,7 +47,7 @@ export class DespliegueEspecialistasComponent implements OnInit{
         this.error=false;
         this.success=false;
         this.mensaje='Error al validar usuario.';
-        console.log('Error al validar', error.error.message);
+        console.log('Error al validar', error.error.mensaje);
       }
     });
   }

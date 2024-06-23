@@ -81,7 +81,6 @@ export class AltaUsuarioComponent implements OnInit{
           this.submitted=false;
         },
         error: (error) => {
-          
           this.altaSuccess=false;
           console.error('Error al registrar paciente: ', error);
           this.altaMessage = error.error.mensaje;//'Ocurrión un error mientras se registraba el usuario, intente de nuevo.';

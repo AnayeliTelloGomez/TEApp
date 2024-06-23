@@ -27,7 +27,7 @@ export class DesplieguePacientesComponent implements OnInit{
   }
 
   obtenerPacientes(): void{
-    this.conexionAzFunc.desplieguePacientes().subscribe(data => {
+    this.conexionAzFunc.desplieguePacientes(localStorage.getItem('correo')+'').subscribe(data => {
       this.pacientes = data;
       console.log(this.pacientes);
     });
