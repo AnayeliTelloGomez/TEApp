@@ -3,7 +3,7 @@
         <div *ngIf="!inicioDenied" class="alert alert-danger" role="alert">
             {{message}}
         </div>
-        <form (ngSubmit)="verificar()">
+        <form (ngSubmit)="verificar()" class="needs-validation" novalidate [class.was-validated]="submitted">
             <div class="align-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                     class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="form-floating">
+            <div class="form-floating form-label">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required [(ngModel)]="contrasena" name="contrasena">
                 <label for="floatingPassword">Contraseña</label>
                 <div class="invalid-feedback">

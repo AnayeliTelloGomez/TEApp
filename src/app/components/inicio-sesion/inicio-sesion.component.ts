@@ -38,6 +38,7 @@ export class InicioSesionComponent implements OnInit{
   inicioDenied: boolean=true;
   //el mensaje a mostrar en el alert
   message: string='';
+  submitted: boolean= false;
 
   ngOnInit(): void {  }
 
@@ -60,6 +61,7 @@ export class InicioSesionComponent implements OnInit{
   }
 
   verificar(){
+    this.submitted=true;
     //creacion de obj a enviar
     const usuarioIncio: usuarioInicio = {
       correo: this.correo,
@@ -86,13 +88,15 @@ export class InicioSesionComponent implements OnInit{
         }  
       },
       error: (error)=>{
-        this.inicioDenied=false;
+        //this.inicioDenied=false;
         if(this.tipo==='2')
           localStorage.setItem('inicio', 'false');
         else
           localStorage.setItem('inicioEsp', 'false');
           console.error('Error: ',error.error.message);
           this.message=error.error.mensaje;///'Correo o contraseña incorrectos.'
+          if(this.message== 'Credenciales erroneas.' || this.message== 'Si desea iniciar sesión, pida a su responsable que lo valide.')
+            this.inicioDenied=false;
       }
     })
   }
