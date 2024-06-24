@@ -17,7 +17,8 @@
             </svg>
         </div>
         <h1 class="h3 mb-3 text-center fw-bold">Recuperar contraseña</h1>
-        <form *ngIf="!envioSuccess" (ngSubmit)="enviarCodigo()">
+        <form *ngIf="!envioSuccess" (ngSubmit)="enviarCodigo()"  class="needs-validation" novalidate
+        [class.was-validated]="submitted">
 
             <div class="py-2 form-floating">
                 <input type="email" class="form-control" id="floatingInput" placeholder="usuario@correo.com" required [(ngModel)]="correo" name="correo">
@@ -35,7 +36,7 @@
             <button class="btn btn-primary w-100 py-2" type="submit">Enviar correo de verificación</button>
         </form>
 
-        <form *ngIf="envioSuccess" (ngSubmit)="validarCodigo()">
+        <form *ngIf="envioSuccess" (ngSubmit)="validarCodigo()" class="needs-validation" novalidate [class.was-validated]="submitted2">
             <div class="row py-2">
                 <div class="form-floating col-lg-12 col-md-12 col-sm-12">
                     <input type="text" class="form-control" id="floatingInput" placeholder="" required [(ngModel)]="codigo" name="codigo">
@@ -43,10 +44,14 @@
                 </div>
             </div>
             <div class="py-2 form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="" required [(ngModel)]="contrasena" name="contrasena">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="" required [(ngModel)]="contrasena" (input)="validatePassword()" name="contrasena" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$" minlength="8">
                 <label for="floatingInput">Nueva contreseña</label>
+                <div class="invalid-feedback">
+                    La contraseña debe tener un tamaño mínimo de 8 caracteres y combinar una letra mayúscula, una letra minúscula, un número y un caracter especial.
+                </div>
             </div>
             <button class="btn btn-primary w-100 py-2" type="submit">Verificar código</button>
         </form>
+        <script src="../../../assets/js/checkout.js"></script>
     </body>
 
