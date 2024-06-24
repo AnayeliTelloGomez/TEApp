@@ -50,8 +50,9 @@ export class AltaUsuarioComponent implements OnInit{
     const hasLower = /[a-z]/.test(password);
     const hasNumber = /\d/.test(password);
     const hasSpecial = /[^\w]/.test(password);
-    console.log( !hasUpper || !hasLower || !hasNumber || !hasSpecial)
-    return this.passwordInvalid = !hasUpper || !hasLower || !hasNumber || !hasSpecial;
+    console.log(!hasSpecial || !hasNumber || !hasLower || !hasUpper)
+    return this.passwordInvalid = !hasSpecial || !hasNumber || !hasLower || !hasUpper;
+    
   }
 
   register(){
