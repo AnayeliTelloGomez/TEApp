@@ -85,7 +85,7 @@
                             </div>
                             <div class="form-check form-switch py-4">
                                 <input class="form-check-input" type="checkbox" [(ngModel)]="privacidadBtn" name="privacidadBtn" (change)="tipoUser()" role="switch" id="flexSwitchCheckChecked" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked"><a href="https://www.gob.mx/indesol/documentos/ley-federal-de-transparencia-y-acceso-a-la-informacion-publica-marco-normativo" target="_blank">Acepto los los términos de privacidad</a></label>
+                                <label class="form-check-label" for="flexSwitchCheckChecked"><a href="#" data-bs-toggle="modal" data-bs-target="#Backdrop">Acepto la política privacidad</a></label>
                             </div>
 
                             <hr class="my-3">
@@ -99,3 +99,22 @@
     </div>
     <script src="../../../assets/js/checkout.js"></script>
 </body>
+
+
+<!-- Modal para confirmar cierre -->
+<div class="modal fade" id="Backdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            Política de privacidad
+        </div>
+        <div class="modal-body">
+            El responsable del tratamiento de los datos personales es TEApp; dichos datos son el nombre del usuario y su correo electrónico. La finalidad del tratamiento de los datos personales es únicamente para identificar al usuario dentro de la aplicación. 
+            Los usuarios tienen derecho a ejercer sus derechos de acceso, rectificación, cancelación y oposición respecto a sus datos personales. Para ejercer estos derechos, los usuarios pueden solicitar su baja en el sistema, al enviar un correo electrónico con el asunto "Solicitud de Baja" e incluir en el cuerpo del mensaje su nombre y correo electrónico registrados en TEApp.
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+        </div>
+    </div>
+    </div>
+</div>

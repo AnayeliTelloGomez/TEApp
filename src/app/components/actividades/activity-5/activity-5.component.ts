@@ -256,7 +256,7 @@ export class Activity5Component implements OnInit {
           {
             texto: `${this.nombre} se negó a probar la comida y se fue.`,
             correcta: false,
-            reflexion: `No probar comidida diferente puede hacer que te pierdas de cosas que podrían gustarte. Intentar probar un poco puede ser una buena idea.`
+            reflexion: `No probar comida diferente puede hacer que te pierdas de cosas que podrían gustarte. Intentar probar un poco puede ser una buena idea.`
           },
           { texto: `${this.nombre} decidió probar la comida.`, correcta: true }
         ],
