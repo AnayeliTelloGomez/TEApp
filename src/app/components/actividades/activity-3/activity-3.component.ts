@@ -22,9 +22,8 @@ import { AnswersAct3Service } from '../../../services/answers-act3.service';
   styleUrl: './activity-3.component.css'
 })
 export class Activity3Component {
-  images: string[] = ['correct1.png', 'correct2.png', 'correct3.png','incorrect1.png', 'incorrect2.png', 'incorrect3.png',
-  'incorrect4.png', 'incorrect5.png', 'incorrect6.png','incorrect7.png', 'incorrect8.png', 'incorrect9.png',
-  'incorrect10.png', 'incorrect11.png', 'incorrect12.png','incorrect13.png', 'incorrect14.png'];
+  images: string[] = ['correct1.png', 'correct2.png', 'correct3.png', 'correct4.png', 'correct5.png', 'correct6.png', 'correct7.png','incorrect1.png', 'incorrect2.png', 'incorrect3.png',
+  'incorrect4.png', 'incorrect5.png', 'incorrect6.png','incorrect7.png'];
   correctAnswers: string[] = [];
   incorrectAnswers: string[] = [];
 
