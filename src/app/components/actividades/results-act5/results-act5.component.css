@@ -27,7 +27,7 @@ html, body {
     max-height: 600px; /* Asume que el contenedor toma toda la altura de la ventana */
     max-width: 800px;
     background-color: #ffffff;/* Color de fondo ligero para el área alrededor del video */
-    padding: 10px;
+    padding: 80px;
     box-shadow: 
     0px 3px 0 5px rgb(177, 176, 176);/* Sombra sutil alrededor del contenedor */
     border-radius: 10px; /* Bordes redondeados */

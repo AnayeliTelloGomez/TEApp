@@ -1,3 +1,7 @@
+<!-- Botones para cerrar la actividad y ayuda -->
+<button mat-icon-button color="black" aria-label="clear" data-bs-toggle="modal" data-bs-target="#Backdrop">
+  <mat-icon>clear</mat-icon>
+</button>
 <br>
 <br>
 <div>
@@ -22,6 +26,7 @@
   [xAxisLabel]="xAxisLabel"
   [yAxisLabel]="yAxisLabel"
   [legendTitle]="legendTitle"
+  [legendPosition]="legendPosition"
   (select)="onSelect($event)"
   (activate)="onActivate($event)"
   (deactivate)="onDeactivate($event)">
@@ -61,3 +66,19 @@
 <br>
 <br>
 <br>
+
+
+<!-- Modal para confirmar cierre -->
+<div class="modal fade" id="Backdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        Si cierras la estadística perderás todo tu progreso.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+        <button type="button" class="btn btn-primary modal-green" data-bs-dismiss="modal" routerLink="/actividadesAsignadas" (click)="resetVariables()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

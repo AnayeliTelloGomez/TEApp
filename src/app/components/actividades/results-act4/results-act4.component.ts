@@ -3,11 +3,14 @@ import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet } fr
 
 import { conexionAzFuncService } from '../../../services/conexionAzFunc.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { LegendPosition } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-results-act4',
   standalone: true,
-  imports: [NgxChartsModule,RouterLink,RouterOutlet, RouterLinkActive],
+  imports: [NgxChartsModule,RouterLink,RouterOutlet, RouterLinkActive,MatIconModule,MatButtonModule],
   templateUrl: './results-act4.component.html',
   styleUrl: './results-act4.component.css'
 })
@@ -23,6 +26,7 @@ export class ResultsAct4Component implements OnInit {
 
   multi: any[] = [];
   multi2: any[] = [];
+  legendPosition: LegendPosition = LegendPosition.Below;
   
 
   constructor(private router: Router, private route: ActivatedRoute, private conexionAzFunc:conexionAzFuncService) {
@@ -92,7 +96,7 @@ export class ResultsAct4Component implements OnInit {
   showXAxisLabel: boolean = true;
   xAxisLabel: string = 'Actividad';
   showYAxisLabel: boolean = true;
-  yAxisLabel: string = 'Número de Reactivos';
+  yAxisLabel: string = 'Número de reactivos';
   legendTitle: string = 'Respuestas';
 
 
@@ -117,7 +121,7 @@ export class ResultsAct4Component implements OnInit {
   showYAxis2: boolean = true;
   gradient2: boolean = true;
   showXAxisLabel2: boolean = true;
-  xAxisLabel2: string = 'Tiempo de Actividad';
+  xAxisLabel2: string = 'Tiempo de actividad';
   showYAxisLabel2: boolean = true;
   yAxisLabel2: string = ' Segundos';
 
