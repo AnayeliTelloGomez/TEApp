@@ -49,15 +49,15 @@ export class DespliegueActividadesComponent implements OnInit {
 
   descripcionAct(act:string){
     if(act==='activity1')
-      return 'descripcion actividad 1';
+      return 'Video informativo acerca de la emoción.';
     else if(act==='activity2')
-          return 'descripcion actividad 2';
+          return 'Serie de imágenes según la emoción seleccionada.';
         else if(act==='activity3')
-              return 'descripcion actividad 3';
+              return 'Identica la emoción según sea el caso.';
             else if(act==='activity4')
-                  return 'descripcion actividad 4';
+                  return 'Acomoda las imágenes en su lugar.';
                 else
-                return 'descripcion actividad 5';        
+                return 'A través de una historieta, el paciente debe escoger cómo actuar.';        
   }
 
   imgCard(act:string){
