@@ -43,6 +43,9 @@ export class Activity5Component implements OnInit {
   imagenActual: string = ''; // Nueva propiedad para almacenar la imagen actual
   imagenes: { [key: string]: string[] } = {}; // Nueva propiedad para las imágenes
 
+  feedbackImage: string = '';
+  showFeedback: boolean = false;
+
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
@@ -57,6 +60,7 @@ export class Activity5Component implements OnInit {
     this.actualizarHistoria();
     
     this.tiempoInicio = Date.now(); // Iniciar temporizador
+  
   }
 
   configurarHistorias() {
@@ -402,8 +406,16 @@ export class Activity5Component implements OnInit {
       correcta: correcta
     });
     if (correcta) {
+      this.feedbackImage = '../../../../assets/img/respuestas/good.png';
+      this.showFeedback = true;
+
       this.pasoActual++;
       if (this.pasoActual < this.historias[this.emocion].length) {
+
+        setTimeout(() => {
+          this.showFeedback = false;
+        }, 2000);
+
         this.actualizarHistoria();
       } else {
         this.mostrarFin = true;

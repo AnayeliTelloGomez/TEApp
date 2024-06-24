@@ -44,9 +44,14 @@
       <div class="modal-header modal-header-red">
 
       </div>
-      <div class="modal-body">
-        <p>Esa no es la mejor opción.</p>
-        <p>{{ reflexionActual }}</p>
+      <div class="modal-body row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+        <div class="col">
+          <p>Esa no es la mejor opción.</p>
+          <p>{{ reflexionActual }}</p>
+        </div>
+        <div class="col">
+          <img [src]="'../../../../assets/img/respuestas/bad.png'" alt="Imagen de la historia" width="200px">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
@@ -86,4 +91,10 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<!-- Contenedores para las imágenes animadas -->
+<div id="feedback-container" [ngClass]="{'show': showFeedback}">
+  <img [src]="feedbackImage" alt="Feedback Image" class="feedback-image">
 </div>
