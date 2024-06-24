@@ -66,32 +66,46 @@ export class AltaUsuarioComponent implements OnInit{
     };
     const requestBody = { paciente: paciente };
     if(!this.passwordInvalid)
-    this.conexionAzFuncService.altaPaciente(requestBody)
-      .subscribe({
-        next: (response) => {
-          this.altaSuccess = true;
-          this.altaError=true;
-          this.altaMessage = response.message;
-          this.correo = '';
-          this.contrasena = '';
-          this.nombres = '';
-          this.paterno = '';
-          this.materno = '';
-          this.tipo='';
-          this.submitted=false;
-        },
-        error: (error) => {
-          this.altaSuccess=false;
-          console.error('Error al registrar paciente: ', error);
-          this.altaMessage = error.error.mensaje;//'Ocurrión un error mientras se registraba el usuario, intente de nuevo.';
-          if(this.altaMessage== 'Ya hay un usuario con ese correo electrónico.')
-            this.altaError=false;
-        }
-      });
+      this.conexionAzFuncService.altaPaciente(requestBody)
+        .subscribe({
+          next: (response) => {
+            this.altaSuccess = true;
+            this.altaError=true;
+            this.altaMessage = response.message;
+            this.correo = '';
+            this.contrasena = '';
+            this.nombres = '';
+            this.paterno = '';
+            this.materno = '';
+            this.tipo='';
+            this.submitted=false;
+          },
+          error: (error) => {
+            this.altaSuccess=false;
+            console.error('Error al registrar paciente: ', error);
+            this.altaMessage = error.error.mensaje;//'Ocurrión un error mientras se registraba el usuario, intente de nuevo.';
+            if(this.altaMessage== 'Ya hay un usuario con ese correo electrónico.')
+              this.altaError=false;
+          }
+        });
   }
 
   onChangeTipoUsuario(event: any) {
     this.tipo = event.target.value;
+  }
+
+  onSubmit(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    
+    if (this.passwordInvalid) {
+      event.stopPropagation();
+    } else {
+      // Handle form submission
+      alert('Form submitted successfully!');
+    }
+
+    form.classList.add('was-validated');
   }
   
 }
