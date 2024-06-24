@@ -56,7 +56,7 @@
                 </div>
             </td>
             <td class="text-center">
-                <button class="image-button" data-bs-toggle="modal" data-bs-target="#Backdrop">
+                <button class="image-button" (click)="seleccionarPaciente(paciente.nombres, paciente.correo)" data-bs-toggle="modal" data-bs-target="#Backdrop">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
                         class="bi bi-x-circle-fill" viewBox="0 0 16 16">
                         <path
@@ -71,11 +71,11 @@
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            ¿Estás seguro de que deseas eliminar a este paciente?
+                            ¿Estás seguro de que deseas eliminar a a {{pacienteSeleccionado}}?
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-                        <button type="button" class="btn btn-primary modal-green" data-bs-dismiss="modal" (click)="eliminarPaciente(paciente.correo)">Cerrar</button>
+                        <button type="button" class="btn btn-primary modal-green" data-bs-dismiss="modal" (click)="eliminarPaciente(correoPaciente)">Eliminar</button>
                         </div>
                     </div>
                     </div>

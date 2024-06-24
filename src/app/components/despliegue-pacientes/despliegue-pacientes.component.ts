@@ -59,6 +59,13 @@ export class DesplieguePacientesComponent implements OnInit{
     }
   }
 
+  pacienteSeleccionado: string='';
+  correoPaciente: string='';
+  seleccionarPaciente(paciente: string, correoPac: string) {
+    this.pacienteSeleccionado = paciente;
+    this.correoPaciente = correoPac;
+  }
+
   eliminarPaciente(correo: string){
     console.log(correo);
     this.conexionAzFunc.eliminarPacientee(correo).subscribe({

@@ -59,6 +59,13 @@ export class DespliegueEspecialistasComponent implements OnInit{
     }
   }
 
+  especialistaSeleccionado: string='';
+  correoEspecialista: string='';
+  seleccionarEspecialista(especialista: string, correoEsp: string) {
+    this.especialistaSeleccionado = especialista;
+    this.correoEspecialista = correoEsp;
+  }
+
   eliminarPaciente(correo: string){
     console.log(correo);
     this.conexionAzFunc.eliminarEspecialista(correo).subscribe({
