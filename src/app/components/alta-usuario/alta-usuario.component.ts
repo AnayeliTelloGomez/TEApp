@@ -31,7 +31,8 @@ export class AltaUsuarioComponent implements OnInit{
   altaError: boolean =true;
   submitted: boolean= false;
   altaMessage: string='';
-
+  privacidad:string='';
+  privacidadBtn:boolean=false;
   //instancia servicio
   constructor (private conexionAzFuncService: conexionAzFuncService){ }
 
@@ -40,6 +41,15 @@ export class AltaUsuarioComponent implements OnInit{
   theme: string = 'light'; // Por defecto, se establece el tema en auto
   setTheme(theme: string) {
     document.documentElement.setAttribute('data-bs-theme', theme);
+  }
+
+
+  tipoUser(){
+    if(this.privacidadBtn){
+      this.privacidad='Especialista';
+    }else{
+      this.privacidad='Paciente';
+    }
   }
 
   passwordInvalid: boolean = false;
