@@ -130,4 +130,10 @@
   margin-bottom: 1rem; /* Margen inferior */
 }
 
+.right{
+  display: flex;
+  align-items: right;
+  text-align: right;
+  justify-content: right;
+}
 
