@@ -94,18 +94,4 @@ export class AltaUsuarioComponent implements OnInit{
     this.tipo = event.target.value;
   }
 
-  onSubmit(event: Event) {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    
-    if (this.passwordInvalid) {
-      event.stopPropagation();
-    } else {
-      // Handle form submission
-      alert('Form submitted successfully!');
-    }
-
-    form.classList.add('was-validated');
-  }
-  
 }
