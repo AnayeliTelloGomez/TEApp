@@ -74,9 +74,9 @@ export class Activity5Component implements OnInit {
         `Después de hablarlo, todos estuvieron de acuerdo y decidieron cada uno se ellos de llevaría el balón un día de la semana. Al final, ${this.nombre} aprendió que mantener la calma y hablar sobre sus sentimientos ayudaba a resolver los problemas de una manera más amigable y justa. Fue un día de muchas lecciones, pero también de mucha diversión.`
       ],
       alegria: [
-        `Era el cumpleaños de ${this.nombre} y estaba muy emocionado porque todos sus amigos iban a venir a su fiesta. Mientras decoraban, ${this.nombre} accidentalmente rompió una decoración.`,
+        `Era el cumpleaños de ${this.nombre} y estaba muy emocionado(a) porque todos sus amigos iban a venir a su fiesta. Mientras decoraban, ${this.nombre} accidentalmente rompió una decoración.`,
         `Los invitados comenzaron a llegar y todos estaban muy felices. Tristemente, uno de los amigos de ${this.nombre} empezó a llorar porque no le gustaba el juego que eligieron.`,
-        `Más tarde, al abrir los regalos ${this.nombre} recibe un regalo que ya tenía.`,
+        `Más tarde, al abrir los regalos ${this.nombre} recibió un regalo que ya tenía.`,
         `Mientras jugaban en el jardín, uno de los amigos de ${this.nombre} se cayó y se lastimó.`,
         `Al final de la fiesta, ${this.nombre} se dio cuenta de que uno de sus amigos estaba solo.`,
         `La fiesta terminó siendo un éxito y todos los amigos de ${this.nombre} se fueron a casa con una sonrisa en el rostro. ${this.nombre} aprendió que la alegría se multiplica cuando todos se sienten incluidos y felices.`
@@ -229,7 +229,7 @@ export class Activity5Component implements OnInit {
             correcta: false,
             reflexion: `Evitar enfrentar el miedo puede impedir que logres tus objetivos. Prepararse y pedir apoyo puede ayudarte.`
           },
-          { texto: `${this.nombre} practicó su exposición y se sintió más seguro.`, correcta: true }
+          { texto: `${this.nombre} practicó su exposición y se sintió más seguro(a).`, correcta: true }
         ],
         [
           {
@@ -241,7 +241,7 @@ export class Activity5Component implements OnInit {
         ],
         [
           {
-            texto: `${this.nombre} decidií no volver a ver películas de miedo.`,
+            texto: `${this.nombre} decidió no volver a ver películas de miedo.`,
             correcta: false,
             reflexion: `Evitar completamente lo que te asusta puede alejarte de descubrir nuevas cosas. Enfrentar el miedo con apoyo puede hacer que te sientas más valiente.`
           },
@@ -307,7 +307,7 @@ export class Activity5Component implements OnInit {
         ],
         [
           {
-            texto: `${this.nombre} se enojó con sus amigos por no lo invitaron.`,
+            texto: `${this.nombre} se enojó con sus amigos porque no lo(a) invitaron.`,
             correcta: false,
             reflexion: `Enojarse con tus amigos puede empeorar tus sentimientos de tristeza. Hablar con ellos y expresar cómo te sientes puede ayudarte a sentirte mejor.`
           },
