@@ -5,6 +5,9 @@ import { LegendPosition } from '@swimlane/ngx-charts';
 import { RouterLink,RouterOutlet, RouterLinkActive,Router, ActivatedRoute} from '@angular/router';
 import { conexionAzFuncService } from '../../../services/conexionAzFunc.service';
 
+import { MenuEspecialistaComponent } from '../../menu-especialista/menu-especialista.component';
+import { MnuPacienteComponent } from '../../mnu-paciente/mnu-paciente.component';
+
 interface Actividad {
   idactividad: number;
   correctas: number;
@@ -28,7 +31,7 @@ interface TotalData {
 @Component({
   selector: 'app-estadistica-actividad',
   standalone: true,
-  imports: [NgxChartsModule, HPacienteComponent],
+  imports: [NgxChartsModule, HPacienteComponent, MenuEspecialistaComponent, MnuPacienteComponent],
   templateUrl: './estadistica-actividad.component.html',
   styleUrls: ['./estadistica-actividad.component.css']
 })
@@ -47,6 +50,7 @@ export class EstadisticaActividadComponent implements OnInit {
   incorrectasData: ChartData[] = [];
   tiempoData: ChartData[] = [];
   totalData: TotalData[] = [];
+  tipo: string=localStorage.getItem('tipo')+'';
 
   view: [number, number] = [0, 0];
 

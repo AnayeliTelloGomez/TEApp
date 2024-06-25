@@ -5,11 +5,14 @@ import { CommonModule } from '@angular/common';
 import { RouterLink,RouterOutlet, RouterLinkActive,Router, ActivatedRoute} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { MenuEspecialistaComponent } from '../../menu-especialista/menu-especialista.component';
+
+
 @Component({
   selector: 'app-actividades-paciente',
   standalone: true,
   imports: [HPacienteComponent, CommonModule,MnuPacienteComponent,
-    RouterLink,RouterOutlet, RouterLinkActive, FormsModule,
+    RouterLink,RouterOutlet, RouterLinkActive, FormsModule, MenuEspecialistaComponent
   ],
   templateUrl: './actividades-paciente.component.html',
   styleUrls: ['./actividades-paciente.component.css']
@@ -18,6 +21,7 @@ export class ActividadesPacienteComponent implements OnInit {
   reactivo: string='';
   emocion: string = '';
   idpac: number = 0;
+  tipo: string=localStorage.getItem('tipo')+'';
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
