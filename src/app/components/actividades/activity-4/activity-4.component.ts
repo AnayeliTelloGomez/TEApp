@@ -40,6 +40,7 @@ export class Activity4Component {
   imagesPath: string = ''; 
   imageCount: number = 1;
   idact: number = 1;
+  emocion_tit: string = '';
 
   sentencesEnojo: string[] = [
     '¿Quién está enojado?'
@@ -73,6 +74,26 @@ export class Activity4Component {
 
       if (emotionParam && countParam) {
         this.emotion = emotionParam;
+
+
+        if (this.emotion == 'enojo'){
+          this.emocion_tit = 'enojo';
+        }
+        else if(this.emotion == 'alegria'){
+          this.emocion_tit = 'alegría';
+        }
+        else if(this.emotion == 'miedo'){
+          this.emocion_tit = 'miedo';
+        }
+        else if(this.emotion == 'asco'){
+          this.emocion_tit = 'asco';
+        }
+        else{
+          this.emocion_tit = 'tristeza';
+        }
+
+
+
         this.imageCount = +countParam;
         this.imagesPath = `../../../../assets/img/Emociones/${this.emotion}/Act4/`;
         this.generateRandomImages();

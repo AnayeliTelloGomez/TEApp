@@ -31,7 +31,22 @@ export class DespliegueActividadesComponent implements OnInit {
     this.conexionAzFunc.despliegueActividades(localStorage.getItem('correo')+'').subscribe(data => {
       this.actividades = data;
       console.log(this.actividades);
+
     });
+  }
+
+
+  actividadEmo(emocion:string){
+    if(emocion==='alegria')
+      return 'alegría';
+    else if(emocion==='enojo')
+          return 'enojo';
+        else if(emocion==='miedo')
+              return 'miedo';
+            else if(emocion==='tristeza')
+                  return 'tristeza';
+                else
+                return 'asco';     
   }
 
   actividadNum(act:string){

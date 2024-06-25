@@ -70,7 +70,7 @@ export class Activity2Component implements OnInit{
       this.emocion_tit = 'Enojo';
     }
     else if(this.emotion == 'alegria'){
-      this.emocion_tit = 'Alegria';
+      this.emocion_tit = 'Alegría';
     }
     else if(this.emotion == 'miedo'){
       this.emocion_tit = 'Miedo';

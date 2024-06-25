@@ -48,6 +48,7 @@ export class Activity1Component implements OnInit {
   submitted: boolean= false;
   altaMessage: string='';
   emocion_tit: string = '';
+  creditos: string ='';
 
 
 
@@ -81,18 +82,23 @@ export class Activity1Component implements OnInit {
 
     if (this.emotion == 'enojo'){
       this.emocion_tit = 'Enojo';
+      this.creditos= 'HumanidadEsComunidadUNAM. Diccionario de las emociones: el enojo.';
     }
     else if(this.emotion == 'alegria'){
-      this.emocion_tit = 'Alegria';
+      this.emocion_tit = 'Alegría';
+      this.creditos= 'HumanidadEsComunidadUNAM. El diccionario de las emociones: la alegría.';
     }
     else if(this.emotion == 'miedo'){
       this.emocion_tit = 'Miedo';
+      this.creditos= 'Gaceta UNAM. El miedo, una alarma mental para proteger la integridad - Gaceta UNAM.';
     }
     else if(this.emotion == 'asco'){
       this.emocion_tit = 'Asco';
+      this.creditos= 'HumanidadesUNAM. Diccionario de las Emociones: Asco.';
     }
     else{
       this.emocion_tit = 'Tristeza';
+      this.creditos= 'HumanidadEsComunidadUNAM. Diccionario de las emociones: la tristeza.';
     }
   }
 

@@ -36,6 +36,7 @@ export class Activity3Component {
 
   showFeedback: boolean = false;
   feedbackImage: string = '';
+  emocion_tit: string = '';
 
 
 
@@ -47,6 +48,26 @@ export class Activity3Component {
       this.repetitions = Number(params.get('repetitions')) || 1;
       this.idact = Number(params.get('idact')) || 1;
       console.log(this.idact);
+
+      
+      if (this.emotion == 'enojo'){
+        this.emocion_tit = 'enojo';
+      }
+      else if(this.emotion == 'alegria'){
+        this.emocion_tit = 'alegría';
+      }
+      else if(this.emotion == 'miedo'){
+        this.emocion_tit = 'miedo';
+      }
+      else if(this.emotion == 'asco'){
+        this.emocion_tit = 'asco';
+      }
+      else{
+        this.emocion_tit = 'tristeza';
+      }
+
+
+
       this.setNewImages();
 
       if (this.currentRepetition === 1) {
