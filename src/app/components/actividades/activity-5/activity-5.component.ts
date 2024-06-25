@@ -71,7 +71,7 @@ export class Activity5Component implements OnInit {
         `Más tarde, ${this.nombre} quiería jugar con un juguete, pero su amigo no quierían compartir.`,
         `De repente, uno de los amigos de ${this.nombre} hizo un comentario que le molestó mucho.`,
         `Al final del día, ${this.nombre} y sus amigos se pelearon por quién debía llevarse un balón a casa.`,
-        `Después de hablarlo, todos estuvieron de acuerdo y decidieron cada uno de ellos de llevaría el balón un día de la semana. Al final, ${this.nombre} aprendió que mantener la calma y hablar sobre sus sentimientos ayudaba a resolver los problemas de una manera más amigable y justa. Fue un día de muchas lecciones, pero también de mucha diversión.`
+        `Después de hablarlo, todos estuvieron de acuerdo y decidieron cada uno se ellos de llevaría el balón un día de la semana. Al final, ${this.nombre} aprendió que mantener la calma y hablar sobre sus sentimientos ayudaba a resolver los problemas de una manera más amigable y justa. Fue un día de muchas lecciones, pero también de mucha diversión.`
       ],
       alegria: [
         `Era el cumpleaños de ${this.nombre} y estaba muy emocionado porque todos sus amigos iban a venir a su fiesta. Mientras decoraban, ${this.nombre} accidentalmente rompió una decoración.`,
@@ -82,26 +82,26 @@ export class Activity5Component implements OnInit {
         `La fiesta terminó siendo un éxito y todos los amigos de ${this.nombre} se fueron a casa con una sonrisa en el rostro. ${this.nombre} aprendió que la alegría se multiplica cuando todos se sienten incluidos y felices.`
       ],
       miedo: [
-        `Una noche, ${this.nombre} estaba en casa y de repente escuchó un ruido raro desde afuera. ${this.nombre} estaba muy asustado y pensaba que podría ser un monstruo.`,
-        `Con el apoyo de su papá, ${this.nombre} se dio cuenta de que el ruido venía de una rama que golpeaba la ventana. Esa noche, ${this.nombre} tuvo que enfrentarse a otro miedo, el cual era ir al baño solo durante la noche.`,
+        `Una noche, ${this.nombre} estaba en casa y de repente escuchó un ruido raro desde afuera. ${this.nombre} estaba muy asustado(a) y pensaba que podría ser un monstruo.`,
+        `Con el apoyo de su papá, ${this.nombre} se dio cuenta de que el ruido venía de una rama que golpeaba la ventana. Esa noche, ${this.nombre} tuvo que enfrentarse a otro miedo, el cual era ir al baño solo(a) durante la noche.`,
         `En la escuela, ${this.nombre} tenía que presentar un trabajo frente a la clase.`,
         `${this.nombre} recordó, que una noche escuchó un cuento de miedo antes de dormir y por ese recuerdo no podía dormir.`,
         `${this.nombre} ve una película de miedo en casa de un amigo.`,
-        `${this.nombre} se dio cuenta de que enfrentarse a sus miedos y pedir ayuda cuando lo necesitaba lo hacía sentir más valiente. Fue una experiencia que le enseñó a manejar sus miedos con valentía y confianza.`
+        `${this.nombre} se dio cuenta de que enfrentarse a sus miedos y pedir ayuda cuando la necesitaba lo(la) hacía sentir más valiente. Fue una experiencia que le enseñó a manejar sus miedos con valentía y confianza.`
       ],
       asco: [
         `Un día, ${this.nombre} fue con su familia a un restaurante nuevo, que servía comida que ${this.nombre} no había comido antes. Le sirvieron un plato con ingredientes que nunca había visto.`,
         `En la escuela, ${this.nombre} encontró un animalito en su almuerzo.`,
-        `Un día, ${this.nombre} tuvo que ayudar a limpiar la casa y lo pusieron a sacar la basura.`,
+        `Un día, ${this.nombre} tuvo que ayudar a limpiar la casa y lo(la) pusieron a sacar la basura.`,
         `Durante una visita al zoológico, ${this.nombre} vio a un animal que le parecía muy feo.`,
         `En casa, ${this.nombre} encontró comida echada a perder en el refrigerador.`,
         `Al final de su aventura, ${this.nombre} aprendió que a veces, lo que parece desagradable puede no ser tan malo y que es importante mantener la calma y buscar soluciones. Fue una lección valiosa sobre enfrentar el asco con responsabilidad y madurez.`
       ],
       tristeza: [
         `Un día, ${this.nombre} se sintió muy triste porque su mascota favorita se había perdido. Estaba tan triste que no quería salir a jugar.`,
-        `Al día siguiente, ${this.nombre} vio que sus amigos estaban jugando y divirtiéndose sin él.`,
+        `Al día siguiente, ${this.nombre} vio que sus amigos estaban jugando y divirtiéndose sin él/ella.`,
         `En la escuela, ${this.nombre} no podía concentrarse porque seguía pensando en su mascota.`,
-        `Sus amigos le hicieron una carta para animarlo, pero ${this.nombre} aún se sentía triste.`,
+        `Sus amigos le hicieron una carta para animarlo(a), pero ${this.nombre} aún se sentía triste.`,
         `Después de unos días, ${this.nombre} todavía no encontraba a su mascota y comenzaba a creer que ya no la volvería a ver.`,
         `Al final, ${this.nombre} encontró su mascota y aprendió que es normal sentirse triste, pero hablar con los demás y buscar ayuda puede hacer que los días difíciles sean más sencillos.`
       ],
@@ -168,7 +168,7 @@ export class Activity5Component implements OnInit {
             correcta: false,
             reflexion: `Sentirse mal por un accidente es normal, pero rendirse no ayudará. Intentar arreglarlo o seguir adelante puede mantener la diversión.`
           },
-          { texto: `${this.nombre} se rip y encontró otra decoración para usar.`, correcta: true }
+          { texto: `${this.nombre} se rió y encontró otra decoración para usar.`, correcta: true }
         ],
         [
           {
@@ -188,7 +188,7 @@ export class Activity5Component implements OnInit {
         ],
         [
           {
-            texto: `${this.nombre} se rio de su amigo y siguió jugando.`,
+            texto: `${this.nombre} se rió de su amigo y siguió jugando.`,
             correcta: false,
             reflexion: `Reírse de alguien que se lastimó puede hacerlo sentir mal. Ayudarlo y asegurarse de que está bien es lo mejor.`
           },
@@ -198,7 +198,7 @@ export class Activity5Component implements OnInit {
           {
             texto: `${this.nombre} ignoró a su amigo y siguió en su fiesta.`,
             correcta: false,
-            reflexion: `Dejar a alguien solo en una fiesta puede hacer que se sienta triste. Invitarlo a unirse a la diversión lo ayudará a sentirme mejor.`
+            reflexion: `Dejar a alguien solo en una fiesta puede hacer que se sienta triste. Invitarlo a unirse a la diversión lo ayudará a sentirse mejor.`
           },
           { texto: `${this.nombre} invitó a su amigo a jugar con los demás.`, correcta: true }
         ],
